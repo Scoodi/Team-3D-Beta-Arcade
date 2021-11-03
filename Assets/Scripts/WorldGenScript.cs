@@ -13,12 +13,6 @@ public class WorldGenScript : MonoBehaviour
     void Start()
     {
         BuildWorld(numToBuild);
-        //SpawnBatteries();
-    }
-
-    private void SpawnBatteries()
-    {
-        throw new System.NotImplementedException();
     }
 
     // Update is called once per frame
