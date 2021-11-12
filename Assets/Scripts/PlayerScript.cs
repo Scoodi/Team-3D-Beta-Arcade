@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     public float maxBatteryLevel = 100f;
     public float batteryRemaining = 100f;
 
+    public float deathTimer = 3f;
     public float batteryDrain = 1f;
     public float torqueForce = 2f;
     public float airTorqueForce = 0.3f;
@@ -81,6 +82,9 @@ public class PlayerScript : MonoBehaviour
                 rb.AddTorque(-Input.GetAxis("Horizontal") * airTorqueForce);
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
+        } else
+        {
+
         }
     }
 
@@ -95,13 +99,21 @@ public class PlayerScript : MonoBehaviour
         } else if (batteryRemaining > 0)
         {
             headGem.color = Color.red;
-        } else
-        {
-            headGem.color = Color.black;
         }
         ui.UpdateUI();
         yield return new WaitForSeconds(timeToDrain);
         StartCoroutine(BatteryDrain(timeToDrain));
+    }
+
+    private IEnumerator BeginDeath ()
+    {
+        headGem.color = Color.gray;
+        yield return new WaitForSeconds(deathTimer);
+        if (batteryRemaining <= 0)
+        {
+            headGem.color = Color.black;
+            ui.DeathUI(maxDistanceTravelled, 420f);
+        }
     }
 
     private void ProcessInputs()
