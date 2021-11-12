@@ -6,15 +6,10 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public PlayerScript player;
-    public LeaderboardManager leaderboard;
 
     public Text spsDisplay;
     public Text batteryDisplay;
     public Text distanceDisplay;
-
-    public GameObject deathDisplay;
-    public Text distanceAchievedDisplay;
-    public Text bestDistanceDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -39,12 +34,5 @@ public class UIScript : MonoBehaviour
         {
             batteryDisplay.text = "Dead";
         }
-    }
-
-    public void DeathUI (float distanceAchieved, float bestDistance)
-    {
-        deathDisplay.SetActive(true);
-        distanceAchievedDisplay.text = distanceAchieved.ToString();
-        bestDistanceDisplay.text = bestDistance.ToString();
     }
 }
