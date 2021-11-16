@@ -1166,6 +1166,7 @@ MonoBehaviour:
   tiles:
   - {fileID: 4369507085585558118, guid: 93f36b278b41535409ee128f232d2e35, type: 3}
   - {fileID: 3431065939720459076, guid: 1b40d46d7dbf0374aaa3668e98e59b11, type: 3}
+  - {fileID: 3329706292605978520, guid: 5edd8cc559772724689529a0f22f35e2, type: 3}
 --- !u!1 &1622081849
 GameObject:
   m_ObjectHideFlags: 0

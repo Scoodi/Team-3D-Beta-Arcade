@@ -28,6 +28,8 @@ public class PlayerScript : MonoBehaviour
     public float maxDistanceTravelled = 0;
 
     private bool inAir = true;
+    private IEnumerator batteryDrainCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,7 +104,8 @@ public class PlayerScript : MonoBehaviour
         }
         ui.UpdateUI();
         yield return new WaitForSeconds(timeToDrain);
-        StartCoroutine(BatteryDrain(timeToDrain));
+        batteryDrainCoroutine = BatteryDrain(timeToDrain);
+        StartCoroutine(batteryDrainCoroutine);
     }
 
     private IEnumerator BeginDeath ()
@@ -132,5 +135,13 @@ public class PlayerScript : MonoBehaviour
 
             }
     }
+    }
+
+    public void ModifyBatteryTimeToDrain(float timeToDrain)
+    {
+        StopCoroutine(batteryDrainCoroutine);
+        batteryDrain = timeToDrain;
+        batteryDrainCoroutine = BatteryDrain(batteryDrain);
+        StartCoroutine(batteryDrainCoroutine);
     }
 }
