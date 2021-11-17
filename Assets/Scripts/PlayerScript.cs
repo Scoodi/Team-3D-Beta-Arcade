@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public SpriteRenderer headGem;
+    PlayerSounds sounds;
 
     public float maxBatteryLevel = 100f;
     public float batteryRemaining = 100f;
@@ -26,7 +27,9 @@ public class PlayerScript : MonoBehaviour
     public float startPoint;
     public float maxDistanceTravelled = 0;
 
-    private bool inAir = true;
+    public Vector2 prev_velocity;
+
+    public bool inAir = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,8 @@ public class PlayerScript : MonoBehaviour
         {
             maxDistanceTravelled = gameObject.transform.position.x;
         }
+
+        prev_velocity = rb.velocity;
     }
 
     private void InitialiseVars()
@@ -56,7 +61,16 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ui = FindObjectOfType<UIScript>();
+
+        sounds = GetComponent<PlayerSounds>();
+
         startPoint = gameObject.transform.position.x;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        sounds.landing.setParameterByName("col_velocity", Mathf.Abs(prev_velocity.y) * 1.2f);
+        sounds.landing.start();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -84,18 +98,22 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private IEnumerator BatteryDrain (float timeToDrain)
+    private IEnumerator BatteryDrain(float timeToDrain)
     {
         batteryRemaining -= 1f;
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
             headGem.color = Color.green;
-        } else if (batteryRemaining >= (maxBatteryLevel * 0.33)) {
+        }
+        else if (batteryRemaining >= (maxBatteryLevel * 0.33))
+        {
             headGem.color = Color.yellow;
-        } else if (batteryRemaining > 0)
+        }
+        else if (batteryRemaining > 0)
         {
             headGem.color = Color.red;
-        } else
+        }
+        else
         {
             headGem.color = Color.black;
         }
@@ -106,12 +124,15 @@ public class PlayerScript : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (batteryRemaining > 0) {
+        if (batteryRemaining > 0)
+        {
             if (Input.GetButtonDown("Jump"))
             {
                 if (!inAir)
                 {
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(sounds.jumpEvent, this.gameObject);
                 }
             }
             if (Input.GetButtonDown("Fire1"))
@@ -119,6 +140,6 @@ public class PlayerScript : MonoBehaviour
                 //TODO: GRAPPLE
 
             }
-    }
+        }
     }
 }
