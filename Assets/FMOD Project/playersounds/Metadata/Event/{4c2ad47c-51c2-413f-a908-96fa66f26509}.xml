@@ -176,6 +176,7 @@
 			<destination>{afa13edf-0d2f-476d-84f1-d2bbdc9379cc}</destination>
 			<destination>{9ae25619-412e-4c95-b5f7-0f132038cb9a}</destination>
 			<destination>{367c98ac-2538-4cb3-aea8-6dfa0caa47fe}</destination>
+			<destination>{49e80b86-c044-42f3-909b-99f4d21e9662}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b8361897-2875-424b-973f-ddf33b253fec}" />
@@ -196,7 +197,7 @@
 			<value>350</value>
 		</property>
 		<property name="value">
-			<value>8</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{88bb9467-8d63-400f-9bfe-332d99afab6f}">
@@ -204,7 +205,7 @@
 			<value>264.65517216044606</value>
 		</property>
 		<property name="value">
-			<value>7</value>
+			<value>8</value>
 		</property>
 		<property name="curveShape">
 			<value>0.0607625507</value>
@@ -218,15 +219,15 @@
 			<value>-8</value>
 		</property>
 		<property name="curveShape">
-			<value>-0.0864113793</value>
+			<value>-0.3511298</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{afa13edf-0d2f-476d-84f1-d2bbdc9379cc}">
 		<property name="position">
-			<value>189.94252807005796</value>
+			<value>200</value>
 		</property>
 		<property name="value">
-			<value>4</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{9ae25619-412e-4c95-b5f7-0f132038cb9a}">
@@ -234,7 +235,7 @@
 			<value>130.17241221790945</value>
 		</property>
 		<property name="value">
-			<value>0.5</value>
+			<value>2</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{367c98ac-2538-4cb3-aea8-6dfa0caa47fe}">
@@ -242,7 +243,15 @@
 			<value>79.310343889682656</value>
 		</property>
 		<property name="value">
-			<value>-3.5</value>
+			<value>-2</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{49e80b86-c044-42f3-909b-99f4d21e9662}">
+		<property name="position">
+			<value>104.02298850574712</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 </objects>
