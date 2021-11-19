@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     public SpriteRenderer headGem;
+    public GrappleScript grapple;
 
     public float maxBatteryLevel = 100f;
     public float batteryRemaining = 100f;
@@ -27,6 +28,8 @@ public class PlayerScript : MonoBehaviour
     public float startPoint;
     public float maxDistanceTravelled = 0;
 
+    private bool holdCheck = false;
+    private bool holdLock = false;
     private bool inAir = true;
     private IEnumerator batteryDrainCoroutine;
 
@@ -59,6 +62,7 @@ public class PlayerScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         ui = FindObjectOfType<UIScript>();
+        grapple = FindObjectOfType<GrappleScript>();
         startPoint = gameObject.transform.position.x;
     }
 
@@ -108,6 +112,19 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(batteryDrainCoroutine);
     }
 
+    private IEnumerator CheckIfHeld(string button, float time)
+    {
+        Debug.Log("Beginning Hold Check");
+        holdLock = true;
+        yield return new WaitForSeconds(time);
+        if (Input.GetButton(button))
+        {
+            Debug.Log(button + " was held");
+            grapple.Grapple(true);
+        }
+        holdLock = false;
+    }
+
     private IEnumerator BeginDeath ()
     {
         headGem.color = Color.gray;
@@ -129,12 +146,15 @@ public class PlayerScript : MonoBehaviour
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 }
             }
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && holdLock == false)
             {
-                //TODO: GRAPPLE
-
+                StartCoroutine(CheckIfHeld("Fire1", 0.5f));
             }
-    }
+            if (Input.GetButtonUp("Fire1") && holdLock == true)
+            {
+                grapple.Grapple(false);
+            }
+        }
     }
 
     public void ModifyBatteryTimeToDrain(float timeToDrain)
