@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1183143393950110698}
   - component: {fileID: 5358066665636816395}
   - component: {fileID: 7260945374276539242}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Geometry
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4369507085585557913}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Geometry
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6770240667483406108}
   - component: {fileID: 8847040262069851702}
   - component: {fileID: 6781361524358905888}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Geometry
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288457702877987255}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor 4
   m_TagString: Geometry
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 5763803735202907690}
   - component: {fileID: 3187460705583615535}
   - component: {fileID: 7427276182902717997}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Geometry
   m_Icon: {fileID: 0}
