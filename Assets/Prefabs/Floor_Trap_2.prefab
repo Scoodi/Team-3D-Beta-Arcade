@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1861737260276213294}
   - component: {fileID: 7049226981217036273}
   - component: {fileID: 7256742744364668346}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622135965504551505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor_Trap_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7392069517026351980}
   - component: {fileID: 2962322307796459530}
   - component: {fileID: 7777771363274429937}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 2213986252124424000}
   - component: {fileID: 5908984379939410425}
   - component: {fileID: 6247255772235986967}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 4301563221824916612}
   - component: {fileID: 8480040950305899072}
   - component: {fileID: 489721891463814492}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Quicksand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,12 +6,15 @@ public class ReducePlayerSpeed : MonoBehaviour
 {
     [Range(1.0f, 99.0f)]
     public float MaxSpeedPercentage;
+    [Range(1.0f, 99.0f)]
+    public float MaxJumpPercentage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerScript>().torqueForce = collision.GetComponent<PlayerScript>().torqueForce * MaxSpeedPercentage / 100.0f;
+            collision.GetComponent<PlayerScript>().jumpForce = collision.GetComponent<PlayerScript>().jumpForce * MaxJumpPercentage / 100.0f;
         }
     }
 
@@ -20,6 +23,7 @@ public class ReducePlayerSpeed : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerScript>().torqueForce = collision.GetComponent<PlayerScript>().torqueForce / MaxSpeedPercentage * 100.0f;
+            collision.GetComponent<PlayerScript>().jumpForce = collision.GetComponent<PlayerScript>().jumpForce / MaxJumpPercentage * 100.0f;
         }
     }
 }

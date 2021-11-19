@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 638498873636988118}
   - component: {fileID: 4641558881496504720}
   - component: {fileID: 298853779280757163}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4977495815264992144}
   - component: {fileID: 1304032812433034381}
   - component: {fileID: 5277272641536315725}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053364383354722413}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor_Trap_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 6658186748686857914}
   - component: {fileID: 7871995850362523103}
   - component: {fileID: 5131363291846342976}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 1555712600772488365}
   - component: {fileID: 9124781125311126339}
   - component: {fileID: 5034904880091140686}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,4 +529,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7440f68b75a4cd54ab5c51e41d83db32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeedPercentage: 50
+  MaxSpeedPercentage: 25
+  MaxJumpPercentage: 90
