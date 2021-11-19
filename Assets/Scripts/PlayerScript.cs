@@ -31,6 +31,8 @@ public class PlayerScript : MonoBehaviour
     private bool holdCheck = false;
     private bool holdLock = false;
     private bool inAir = true;
+    private IEnumerator batteryDrainCoroutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,7 +108,8 @@ public class PlayerScript : MonoBehaviour
         }
         ui.UpdateUI();
         yield return new WaitForSeconds(timeToDrain);
-        StartCoroutine(BatteryDrain(timeToDrain));
+        batteryDrainCoroutine = BatteryDrain(timeToDrain);
+        StartCoroutine(batteryDrainCoroutine);
     }
 
     private IEnumerator CheckIfHeld(string button, float time)
@@ -152,5 +155,13 @@ public class PlayerScript : MonoBehaviour
                 grapple.Grapple(false);
             }
         }
+    }
+
+    public void ModifyBatteryTimeToDrain(float timeToDrain)
+    {
+        StopCoroutine(batteryDrainCoroutine);
+        batteryDrain = timeToDrain;
+        batteryDrainCoroutine = BatteryDrain(batteryDrain);
+        StartCoroutine(batteryDrainCoroutine);
     }
 }
