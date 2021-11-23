@@ -471,7 +471,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 8
   m_Depth: -1
   m_CullingMask:
@@ -1129,6 +1129,8 @@ MonoBehaviour:
   - {fileID: 4225177224645186881, guid: 46654a3184ab98043b082b49f8b928ed, type: 3}
   - {fileID: 582623604540187140, guid: a265ee64b22430648b248d319d72f754, type: 3}
   - {fileID: 5099359749541655846, guid: b18f6bd8b2ee8ac4887dd1a5e9ae6874, type: 3}
+  - {fileID: 3431065939720459076, guid: 1b40d46d7dbf0374aaa3668e98e59b11, type: 3}
+  - {fileID: 3329706292605978520, guid: 5edd8cc559772724689529a0f22f35e2, type: 3}
   - {fileID: 4369507085585558118, guid: f01ac3a13db6a1b4ca06659e282a73f5, type: 3}
 --- !u!114 &1122722214
 MonoBehaviour:
