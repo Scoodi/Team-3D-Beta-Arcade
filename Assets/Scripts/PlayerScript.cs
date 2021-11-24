@@ -30,8 +30,11 @@ public class PlayerScript : MonoBehaviour
 
     private bool holdCheck = false;
     private bool holdLock = false;
-    private bool inAir = true;
+    public bool inAir = true;
     private IEnumerator batteryDrainCoroutine;
+
+    public Vector2 prev_velocity;
+    PlayerSounds sounds;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,8 @@ public class PlayerScript : MonoBehaviour
         {
             maxDistanceTravelled = gameObject.transform.position.x;
         }
+
+        prev_velocity = rb.velocity;
     }
 
     private void InitialiseVars()
@@ -64,6 +69,12 @@ public class PlayerScript : MonoBehaviour
         ui = FindObjectOfType<UIScript>();
         grapple = FindObjectOfType<GrappleScript>();
         startPoint = gameObject.transform.position.x;
+        sounds = GetComponent<PlayerSounds>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        sounds.Landing();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -144,6 +155,7 @@ public class PlayerScript : MonoBehaviour
                 if (!inAir)
                 {
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    sounds.Jump();
                 }
             }
             if (Input.GetButtonDown("Fire1") && holdLock == false)
