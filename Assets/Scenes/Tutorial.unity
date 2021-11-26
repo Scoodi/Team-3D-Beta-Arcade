@@ -3881,8 +3881,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.2, y: 38}
-  m_SizeDelta: {x: -848.9233, y: -465.7429}
+  m_AnchoredPosition: {x: -23.200012, y: 8.991211}
+  m_SizeDelta: {x: -1634.6138, y: -1023.3295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112963658
 MonoBehaviour:
@@ -4752,8 +4752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27.737, y: 99}
-  m_SizeDelta: {x: -839.85, y: -442.85}
+  m_AnchoredPosition: {x: -14.995972, y: 112.57001}
+  m_SizeDelta: {x: -1579.9198, y: -1005.5056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165280254
 MonoBehaviour:
@@ -9399,8 +9399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.2, y: -78.455}
-  m_SizeDelta: {x: -938.9716, y: -454.7119}
+  m_AnchoredPosition: {x: -23.2, y: -188.26}
+  m_SizeDelta: {x: -1689.1791, y: -1017.3676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791869460
 MonoBehaviour:
@@ -14087,8 +14087,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.200012, y: -14.200012}
-  m_SizeDelta: {x: -792.8965, y: -464.7788}
+  m_AnchoredPosition: {x: -23.2, y: -88.144}
+  m_SizeDelta: {x: -1596.3282, y: -1018.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466993964
 MonoBehaviour:
@@ -15729,6 +15729,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   sr: {fileID: 0}
   headGem: {fileID: 1455095281}
+  grapple: {fileID: 0}
   maxBatteryLevel: 100
   batteryRemaining: 100
   deathTimer: 3
@@ -15740,6 +15741,8 @@ MonoBehaviour:
   currentSpeed: 0
   startPoint: 0
   maxDistanceTravelled: 0
+  inAir: 1
+  prev_velocity: {x: 0, y: 0}
 --- !u!50 &1743368894
 Rigidbody2D:
   serializedVersion: 4
