@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="MasterTagFolder" id="{6e9682ef-022f-4203-8eaf-4c64bc7c1d1e}">
+		<property name="name">
+			<value>Master</value>
+		</property>
+		<relationship name="items">
+			<destination>{2358cf10-585a-496f-8399-072b802c1f13}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{2358cf10-585a-496f-8399-072b802c1f13}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+</objects>
