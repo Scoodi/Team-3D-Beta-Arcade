@@ -702,7 +702,7 @@ MonoBehaviour:
   batteryRemaining: 100
   deathTimer: 3
   batteryDrain: 1
-  torqueForce: 10
+  torqueForce: 2
   airTorqueForce: 0.3
   airForce: 1
   jumpForce: 10
