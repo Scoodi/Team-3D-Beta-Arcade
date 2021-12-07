@@ -5,15 +5,18 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public Transform target;
+    private float _width;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        float height = 2f * Camera.main.orthographicSize;
+        _width = height * Camera.main.aspect;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
+        this.transform.position = new Vector3(target.position.x + ((_width / 2f) - 8), transform.position.y, transform.position.z);
     }
 }
