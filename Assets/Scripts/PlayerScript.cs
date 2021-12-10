@@ -33,6 +33,8 @@ public class PlayerScript : MonoBehaviour
     public bool inAir = true;
     private IEnumerator batteryDrainCoroutine;
 
+    public bool UIEnabled = true;
+
     public Vector2 prev_velocity;
     PlayerSounds sounds;
 
@@ -48,7 +50,11 @@ public class PlayerScript : MonoBehaviour
     {
         ProcessInputs();
         UpdateVars();
-        ui.UpdateUI();
+
+        if (UIEnabled)
+        {
+            ui.UpdateUI();
+        }
     }
 
     private void UpdateVars()
@@ -117,7 +123,11 @@ public class PlayerScript : MonoBehaviour
         {
             headGem.color = Color.red;
         }
-        ui.UpdateUI();
+
+        if (UIEnabled)
+        {
+            ui.UpdateUI();
+        }
         yield return new WaitForSeconds(timeToDrain);
         batteryDrainCoroutine = BatteryDrain(timeToDrain);
         StartCoroutine(batteryDrainCoroutine);
