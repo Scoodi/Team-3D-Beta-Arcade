@@ -41797,7 +41797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721bc157d2ae42544bbf7a3c075d90a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LabCompleted: {fileID: 2047148516}
+  LabCompleted: {fileID: 2108429749}
 --- !u!61 &1088709888
 BoxCollider2D:
   m_ObjectHideFlags: 0

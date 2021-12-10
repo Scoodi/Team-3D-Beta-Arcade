@@ -6,13 +6,12 @@ public class LabEndPointScript : MonoBehaviour
 {
     public GameObject LabCompleted;
 
-    private void OnTriggerEnete2D(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             LabCompleted.gameObject.SetActive(true);
         }
-
 
     }
 
