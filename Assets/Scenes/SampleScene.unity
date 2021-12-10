@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numToBuild: 200
   origin: {fileID: 1122722212}
-  distanceBetween: 25
+  distanceBetween: 45
   tiles:
   - {fileID: 4369507085585558118, guid: 93f36b278b41535409ee128f232d2e35, type: 3}
   - {fileID: 582623604540187140, guid: a265ee64b22430648b248d319d72f754, type: 3}
