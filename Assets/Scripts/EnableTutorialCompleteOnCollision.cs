@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnableHUDOnCollision : BaseEnableUIOnCollision
+public class EnableTutorialCompleteOnCollision : BaseEnableUIOnCollision
 {
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
-        player.UIEnabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -18,7 +17,7 @@ public class EnableHUDOnCollision : BaseEnableUIOnCollision
             player.UIEnabled = true;
             foreach (GameObject obj in uiObjects)
             {
-                if (obj.tag == "HUD")
+                if (obj.tag == "LevelComplete")
                 {
                     obj.SetActive(true);
                 }
