@@ -1,0 +1,804 @@
+fileFormatVersion: 2
+guid: 70cf4adc2e547ab44a4437b00ed9fd97
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 789482886317728351
+    second: Forest_Tile_Set_0
+  - first:
+      213: 4160347432390624445
+    second: Forest_Tile_Set_1
+  - first:
+      213: -1613678072981556071
+    second: Forest_Tile_Set_2
+  - first:
+      213: 5319782947030808295
+    second: Forest_Tile_Set_3
+  - first:
+      213: 2809746086327143646
+    second: Forest_Tile_Set_4
+  - first:
+      213: -8393128285597070867
+    second: Forest_Tile_Set_5
+  - first:
+      213: 4000207043428569869
+    second: Forest_Tile_Set_6
+  - first:
+      213: 468570491513500803
+    second: Forest_Tile_Set_7
+  - first:
+      213: -7361663608898413889
+    second: Forest_Tile_Set_8
+  - first:
+      213: -1254527471406899181
+    second: Forest_Tile_Set_9
+  - first:
+      213: -5842603694707634297
+    second: Forest_Tile_Set_10
+  - first:
+      213: -749437128660937430
+    second: Forest_Tile_Set_11
+  - first:
+      213: -4380804122884928235
+    second: Forest_Tile_Set_12
+  - first:
+      213: -7503930123300094538
+    second: Forest_Tile_Set_13
+  - first:
+      213: -2675674424010208817
+    second: Forest_Tile_Set_14
+  - first:
+      213: -2023302289479353969
+    second: Forest_Tile_Set_15
+  - first:
+      213: -6874775040810772851
+    second: Forest_Tile_Set_16
+  - first:
+      213: -4695190306086199711
+    second: Forest_Tile_Set_17
+  - first:
+      213: 210920819651781408
+    second: Forest_Tile_Set_18
+  - first:
+      213: 401702414056043554
+    second: Forest_Tile_Set_19
+  - first:
+      213: -843414666269013461
+    second: Forest_Tile_Set_20
+  - first:
+      213: -5247551392917087589
+    second: Forest_Tile_Set_21
+  - first:
+      213: -2240382467185128941
+    second: Forest_Tile_Set_22
+  - first:
+      213: -8095259828005159245
+    second: Forest_Tile_Set_23
+  - first:
+      213: -7694605101323200058
+    second: Forest_Tile_Set_24
+  - first:
+      213: -4258559094904810204
+    second: Forest_Tile_Set_25
+  - first:
+      213: 4212424658139245401
+    second: Forest_Tile_Set_26
+  - first:
+      213: -949816446915551547
+    second: Forest_Tile_Set_27
+  - first:
+      213: 8553279048697056210
+    second: Forest_Tile_Set_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Forest_Tile_Set_0
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 139
+        width: 40
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52e733908ec4fa00800000000000000
+      internalID: 789482886317728351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 96
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db40ad182f58cb930800000000000000
+      internalID: 4160347432390624445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 139
+        width: 40
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994f81e97501b99e0800000000000000
+      internalID: -1613678072981556071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 96
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6b3f7a76aa3d940800000000000000
+      internalID: 5319782947030808295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_4
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 96
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcc298cd293ef620800000000000000
+      internalID: 2809746086327143646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 139
+        width: 40
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de904befa4e958b80800000000000000
+      internalID: -8393128285597070867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 53
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03539bac17938730800000000000000
+      internalID: 4000207043428569869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 53
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38474e22162b08600800000000000000
+      internalID: 468570491513500803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_8
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 53
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba90b393fd16d990800000000000000
+      internalID: -7361663608898413889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 10
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310a2d959e5079ee0800000000000000
+      internalID: -1254527471406899181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 10
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f019525e6eaeea0800000000000000
+      internalID: -5842603694707634297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 10
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a251da4f6e67995f0800000000000000
+      internalID: -749437128660937430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_12
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 142
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d80e85cd14433c0800000000000000
+      internalID: -4380804122884928235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_13
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 142
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd38557f4facd790800000000000000
+      internalID: -7503930123300094538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_14
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 142
+        width: 80
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc90646a9481edad0800000000000000
+      internalID: -2675674424010208817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 142
+        width: 80
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f893952a949cbe3e0800000000000000
+      internalID: -2023302289479353969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_16
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 139
+        width: 40
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8690c54684e790a0800000000000000
+      internalID: -6874775040810772851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_17
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 55
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16edfd4fa4557deb0800000000000000
+      internalID: -4695190306086199711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_18
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 55
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02324133e575de200800000000000000
+      internalID: 210920819651781408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_19
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 55
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2243a3f9732239500800000000000000
+      internalID: 401702414056043554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 55
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a4ea264d69b44f0800000000000000
+      internalID: -843414666269013461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_21
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 12
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a12949fc3fc27b0800000000000000
+      internalID: -5247551392917087589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 12
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31aca62240098e0e0800000000000000
+      internalID: -2240382467185128941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_23
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 13
+        width: 78
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be3343b31cd7af80800000000000000
+      internalID: -8095259828005159245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 13
+        width: 78
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9d8b89d65473590800000000000000
+      internalID: -7694605101323200058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_25
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 96
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4259035e01f86e4c0800000000000000
+      internalID: -4258559094904810204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_26
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 53
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b6c7f78e9857a30800000000000000
+      internalID: 4212424658139245401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_27
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 10
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce56cf49f291d2f0800000000000000
+      internalID: -949816446915551547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Forest_Tile_Set_28
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 10
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db01624af953b670800000000000000
+      internalID: 8553279048697056210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
