@@ -30,11 +30,17 @@ public class PlayerScript : MonoBehaviour
 
     private bool holdCheck = false;
     private bool holdLock = false;
+
     public bool inAir = true;
+
     private IEnumerator batteryDrainCoroutine;
+
+    public bool UIEnabled = true;
 
     public Vector2 prev_velocity;
     PlayerSounds sounds;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +54,11 @@ public class PlayerScript : MonoBehaviour
     {
         ProcessInputs();
         UpdateVars();
-        ui.UpdateUI();
+
+        if (UIEnabled)
+        {
+            ui.UpdateUI();
+        }
     }
 
     private void UpdateVars()
@@ -99,25 +109,33 @@ public class PlayerScript : MonoBehaviour
                 rb.AddTorque(-Input.GetAxis("Horizontal") * airTorqueForce);
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
-        } else
+        }
+        else
         {
 
         }
     }
 
-    private IEnumerator BatteryDrain (float timeToDrain)
+    private IEnumerator BatteryDrain(float timeToDrain)
     {
         batteryRemaining -= 1f;
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
             headGem.color = Color.green;
-        } else if (batteryRemaining >= (maxBatteryLevel * 0.33)) {
+        }
+        else if (batteryRemaining >= (maxBatteryLevel * 0.33))
+        {
             headGem.color = Color.yellow;
-        } else if (batteryRemaining > 0)
+        }
+        else if (batteryRemaining > 0)
         {
             headGem.color = Color.red;
         }
-        ui.UpdateUI();
+
+        if (UIEnabled)
+        {
+            ui.UpdateUI();
+        }
         yield return new WaitForSeconds(timeToDrain);
         batteryDrainCoroutine = BatteryDrain(timeToDrain);
         StartCoroutine(batteryDrainCoroutine);
@@ -136,7 +154,7 @@ public class PlayerScript : MonoBehaviour
         holdLock = false;
     }
 
-    private IEnumerator BeginDeath ()
+    private IEnumerator BeginDeath()
     {
         headGem.color = Color.gray;
         yield return new WaitForSeconds(deathTimer);
@@ -149,7 +167,8 @@ public class PlayerScript : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (batteryRemaining > 0) {
+        if (batteryRemaining > 0)
+        {
             if (Input.GetButtonDown("Jump"))
             {
                 if (!inAir)
@@ -176,4 +195,36 @@ public class PlayerScript : MonoBehaviour
         batteryDrainCoroutine = BatteryDrain(batteryDrain);
         StartCoroutine(batteryDrainCoroutine);
     }
+
+    void OnDrawGizmos()
+    {
+        var center = (Vector2)transform.position;
+        var half = GetComponent<CircleCollider2D>().radius;
+
+        bool right = Physics2D.OverlapBox(center + Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
+        bool left = Physics2D.OverlapBox(center - Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
+        bool down = Physics2D.OverlapBox(center + Vector2.down * half, new Vector3(transform.localScale.x, 0.2f), 0);
+
+        Gizmos.color = Color.blue;
+
+        if (right)
+        {
+            print("r" + right);
+        }
+
+        if (left)
+        {
+            print("l" + left);
+        }
+
+        if (down)
+        {
+            print("d" + down);
+        }
+
+
+
+
+    }
+
 }
