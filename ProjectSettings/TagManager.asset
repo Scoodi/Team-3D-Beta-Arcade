@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Geometry
   - Hook
+  - HUD
+  - LevelComplete
   layers:
   - Default
   - TransparentFX
