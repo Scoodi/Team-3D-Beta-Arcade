@@ -42317,7 +42317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1801957852}
-  Tag: LevelComplete
+  ui: {fileID: 2108429749}
   playerHudCanvas: {fileID: 736040728}
 --- !u!61 &1088709888
 BoxCollider2D:
@@ -71625,7 +71625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1801957852}
-  Tag: HUD
+  ui: {fileID: 736040727}
   playerHudCanvas: {fileID: 736040728}
 --- !u!1 &2106417392
 GameObject:

@@ -5,52 +5,31 @@ using UnityEngine;
 public class EnableUIOnCollision : MonoBehaviour
 {
     public PlayerScript player;
-    private List<GameObject> uiObjects = new List<GameObject>();
-    private int UILayer = 5;
-    public string Tag;
+    public GameObject ui;
     public UIScript playerHudCanvas;
 
     // Start is called before the first frame update
     protected void Start()
     {
-        uiObjects = findGameObjectsWithLayer(UILayer);
-        foreach (GameObject obj in uiObjects)
-        {
-            obj.SetActive(false);
-        }
-        player.UIEnabled = false;
+        SetUIActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
-            player.UIEnabled = true;
-            foreach (GameObject obj in uiObjects)
-            {
-                if (obj.tag == Tag)
-                {
-                    obj.SetActive(true);
-                }
-            }
-
+            SetUIActive(true);
             player.ui = playerHudCanvas;
         }
     }
 
-    protected List<GameObject> findGameObjectsWithLayer(int layer)
+    private void SetUIActive(bool isActive)
     {
-        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-        List<GameObject> objectsWithLayer = new List<GameObject>();
-
-        foreach (GameObject obj in allObjects)
+        player.UIEnabled = isActive;
+        ui.SetActive(isActive);
+        foreach (Transform child in ui.transform)
         {
-            if (obj.layer == layer)
-            {
-                objectsWithLayer.Add(obj);
-            }
+            child.gameObject.SetActive(isActive);
         }
-
-        return objectsWithLayer;
     }
 }
