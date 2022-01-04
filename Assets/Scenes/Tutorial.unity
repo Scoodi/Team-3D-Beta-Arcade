@@ -12565,7 +12565,7 @@ GameObject:
   - component: {fileID: 500962775}
   m_Layer: 5
   m_Name: Leaderboard (2)
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13683,7 +13683,7 @@ GameObject:
   - component: {fileID: 567694346}
   m_Layer: 5
   m_Name: Leaderboard (4)
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33333,7 +33333,7 @@ GameObject:
   - component: {fileID: 736040728}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36906,7 +36906,7 @@ GameObject:
   - component: {fileID: 850941286}
   m_Layer: 5
   m_Name: DistanceDisplay
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41648,7 +41648,7 @@ GameObject:
   - component: {fileID: 1062867537}
   m_Layer: 5
   m_Name: BatteryDisplay
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41926,7 +41926,7 @@ GameObject:
   - component: {fileID: 1065989918}
   m_Layer: 5
   m_Name: ScuttlesDisplay
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46689,7 +46689,7 @@ GameObject:
   - component: {fileID: 1247921182}
   m_Layer: 5
   m_Name: Leaderboard (5)
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47315,7 +47315,7 @@ GameObject:
   - component: {fileID: 1256994350}
   m_Layer: 5
   m_Name: Leaderboard
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50636,7 +50636,7 @@ GameObject:
   - component: {fileID: 1366341223}
   m_Layer: 5
   m_Name: Button
-  m_TagString: LevelComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51670,7 +51670,7 @@ GameObject:
   - component: {fileID: 1412627195}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: LevelComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65310,7 +65310,7 @@ GameObject:
   - component: {fileID: 1924099815}
   m_Layer: 5
   m_Name: Leaderboard (1)
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66012,7 +66012,7 @@ GameObject:
   - component: {fileID: 1960283230}
   m_Layer: 5
   m_Name: Leaderboard (3)
-  m_TagString: HUD
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68055,7 +68055,7 @@ GameObject:
   - component: {fileID: 2018130085}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: LevelComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69084,7 +69084,7 @@ GameObject:
   - component: {fileID: 2047148518}
   m_Layer: 5
   m_Name: LabCompletedUi
-  m_TagString: LevelComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69545,7 +69545,7 @@ GameObject:
   - component: {fileID: 2064526254}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: LevelComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
