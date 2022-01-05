@@ -723,6 +723,7 @@ MonoBehaviour:
   airForce: 1
   jumpForce: 10
   currentSpeed: 0
+  maxVelocityMagnitude: 10
   startPoint: 0
   maxDistanceTravelled: 0
   inAir: 1

@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     public float jumpForce = 20f;
 
     public float currentSpeed;
+    public float maxVelocityMagnitude;
 
     public float startPoint;
     public float maxDistanceTravelled = 0;
@@ -65,6 +66,9 @@ public class PlayerScript : MonoBehaviour
 
     private void UpdateVars()
     {
+        float magnitude = Mathf.Min(rb.velocity.magnitude, maxVelocityMagnitude);
+        rb.velocity = rb.velocity.normalized * magnitude;
+        Debug.Log(rb.velocity.magnitude);
         currentSpeed = rb.velocity.magnitude * 10;
         if (this.transform.position.x > maxDistanceTravelled)
         {
