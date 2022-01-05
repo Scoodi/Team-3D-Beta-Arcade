@@ -726,6 +726,7 @@ MonoBehaviour:
   startPoint: 0
   maxDistanceTravelled: 0
   inAir: 1
+  UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
 --- !u!50 &902747196
 Rigidbody2D:
@@ -1155,11 +1156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94eef17ba2ffb6841ac764bbb4734c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numToBuild: 200
+  numToBuild: 1000
   origin: {fileID: 1122722212}
   distanceBetween: 45
   tiles:
-  - {fileID: 4369507085585558118, guid: 93f36b278b41535409ee128f232d2e35, type: 3}
   - {fileID: 4369507085585558118, guid: f92ab4d1145f71944b6e1bbd2d857fea, type: 3}
   - {fileID: 4369507085585558118, guid: efaaba61e07098d4ca53e7619bc96459, type: 3}
   - {fileID: 4369507085585558118, guid: 5cd82afc9c2ec1a41b27e0ee4cd19a57, type: 3}
