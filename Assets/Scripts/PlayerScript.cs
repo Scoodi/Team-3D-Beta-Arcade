@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviour
@@ -36,6 +37,7 @@ public class PlayerScript : MonoBehaviour
     private IEnumerator batteryDrainCoroutine;
 
     public bool UIEnabled = true;
+    private bool isTutorialCompleted = false;
 
     public Vector2 prev_velocity;
     PlayerSounds sounds;
@@ -98,7 +100,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted))
         {
             if (!inAir)
             {
@@ -167,7 +169,7 @@ public class PlayerScript : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted))
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -227,4 +229,16 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    public bool IsTutorialCompleted
+    {
+        get
+        {
+            return IsTutorialCompleted;
+        }
+
+        set
+        {
+            isTutorialCompleted = value;
+        }
+    }
 }
