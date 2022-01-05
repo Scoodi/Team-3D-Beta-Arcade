@@ -66,8 +66,10 @@ public class PlayerScript : MonoBehaviour
 
     private void UpdateVars()
     {
-        float magnitude = Mathf.Min(rb.velocity.magnitude, maxVelocityMagnitude);
-        rb.velocity = rb.velocity.normalized * magnitude;
+        if (rb.velocity.magnitude > maxVelocityMagnitude)
+        {
+            rb.velocity *= 0.999f;
+        }
         currentSpeed = rb.velocity.magnitude * 10;
         if (this.transform.position.x > maxDistanceTravelled)
         {
@@ -103,7 +105,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted))
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted) && rb.velocity.magnitude <= maxVelocityMagnitude)
         {
             if (!inAir)
             {
@@ -114,10 +116,6 @@ public class PlayerScript : MonoBehaviour
                 rb.AddTorque(-Input.GetAxis("Horizontal") * airTorqueForce);
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
-        }
-        else
-        {
-
         }
     }
 
