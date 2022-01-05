@@ -15,10 +15,10 @@ public class PlayerScript : MonoBehaviour
     public GrappleScript grapple;
 
     public float maxBatteryLevel = 100f;
-    public float batteryRemaining = 100f;
+    public float batteryRemaining;
 
     public float deathTimer = 3f;
-    public float batteryDrain = 1f;
+    public float batteryDrain;
     public float torqueForce = 2f;
     public float airTorqueForce = 0.3f;
     public float airForce = 1f;
@@ -120,7 +120,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator BatteryDrain(float timeToDrain)
     {
-        batteryRemaining -= 1f;
+        batteryRemaining -= timeToDrain;
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
             headGem.color = Color.green;

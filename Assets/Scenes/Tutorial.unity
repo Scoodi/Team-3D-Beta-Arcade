@@ -42283,6 +42283,7 @@ GameObject:
   - component: {fileID: 1088709886}
   - component: {fileID: 1088709888}
   - component: {fileID: 1088709887}
+  - component: {fileID: 1088709889}
   m_Layer: 0
   m_Name: LabEndPointCollision
   m_TagString: Untagged
@@ -42345,6 +42346,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9978027, y: 2.0091312}
   m_EdgeRadius: 0
+--- !u!114 &1088709889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088709885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc32224f150c974dae3b43251e1725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1801957852}
 --- !u!4 &1090650072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 258d10a0851fb154ca6325f982fae689, type: 3}
@@ -61800,9 +61814,9 @@ MonoBehaviour:
   headGem: {fileID: 660096126}
   grapple: {fileID: 0}
   maxBatteryLevel: 100
-  batteryRemaining: 100
+  batteryRemaining: 1
   deathTimer: 3
-  batteryDrain: 1
+  batteryDrain: 0
   torqueForce: 2
   airTorqueForce: 0.3
   airForce: 1
@@ -67186,6 +67200,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1993206347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993206345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229120383edcdc6498ece8e81ab4ebf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1801957852}
 --- !u!1001 &1998770792
 PrefabInstance:
   m_ObjectHideFlags: 0
