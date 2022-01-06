@@ -31,13 +31,13 @@ TextureImporter:
     second: Beach Tiles_8
   - first:
       213: -7049104689059629945
-    second: Beach Tiles_9
+    second: side left beach tile
   - first:
       213: -4351815973735288001
     second: Beach Tiles_10
   - first:
       213: 3659903082474048592
-    second: Beach Tiles_11
+    second: side right beach tile
   - first:
       213: -2573164711938011128
     second: New Beach Tiles_12
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beach Tiles_9
+      name: side left beach tile
       rect:
         serializedVersion: 2
         x: 7
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Beach Tiles_11
+      name: side right beach tile
       rect:
         serializedVersion: 2
         x: 93
