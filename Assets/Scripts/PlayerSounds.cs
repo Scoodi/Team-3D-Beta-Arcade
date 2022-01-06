@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
+    PlayerScript playerScript;
+
+    public SceneAudioManager audioManager;
+
     public FMOD.Studio.EventInstance rolling;
     public string rollEvent;
 
@@ -16,15 +20,18 @@ public class PlayerSounds : MonoBehaviour
     public string landEvent;
     Vector2 landing_velocity;
 
+    public FMOD.Studio.EventInstance jump;
     public string jumpEvent;
-    PlayerScript playerScript;
 
+    public FMOD.Studio.EventInstance death;
     public string deathEvent;
 
     void Awake()
     {
         playerScript = GetComponent<PlayerScript>();
 
+        jump = FMODUnity.RuntimeManager.CreateInstance(jumpEvent);
+        death = FMODUnity.RuntimeManager.CreateInstance(deathEvent);
         rolling = FMODUnity.RuntimeManager.CreateInstance(rollEvent);
         mid_air_rolling = FMODUnity.RuntimeManager.CreateInstance(midAirEvent);
         landing = FMODUnity.RuntimeManager.CreateInstance(landEvent);
@@ -32,16 +39,20 @@ public class PlayerSounds : MonoBehaviour
 
     public void Death()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(deathEvent, this.gameObject);
+        death.setVolume(1 * audioManager.globalSFXVol);
+        death.start();
     }
     public void Jump()
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(jumpEvent, this.gameObject);
+        jump.setVolume(1 * audioManager.globalSFXVol);
+        jump.start();
     }
 
     public void Landing()
     {
         landing.setParameterByName("col_velocity", Mathf.Abs(playerScript.prev_velocity.y) * 1.2f);
+
+        landing.setVolume(1 * audioManager.globalSFXVol);
         landing.start();
     }
 
@@ -65,7 +76,7 @@ public class PlayerSounds : MonoBehaviour
             FMOD.Studio.PLAYBACK_STATE playing;
             rolling.getPlaybackState(out playing);
 
-            rolling.setVolume(.25f);
+            rolling.setVolume(.25f * audioManager.globalSFXVol);
 
             if (playing == FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
@@ -78,6 +89,15 @@ public class PlayerSounds : MonoBehaviour
             {
                 if (playing != FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
+                    float i = 0;
+                    mid_air_rolling.getVolume(out i);
+
+                    if (i != 1 * audioManager.globalSFXVol)
+                    {
+                        i = 1 * audioManager.globalSFXVol;
+                    }
+
+                    mid_air_rolling.setVolume(i);
                     mid_air_rolling.start();
                 }
             }
@@ -91,7 +111,7 @@ public class PlayerSounds : MonoBehaviour
             FMOD.Studio.PLAYBACK_STATE playing;
             mid_air_rolling.getPlaybackState(out playing);
 
-            rolling.setVolume(1f);
+            rolling.setVolume(1f * audioManager.globalSFXVol);
 
             if (playing == FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
@@ -107,6 +127,7 @@ public class PlayerSounds : MonoBehaviour
                     rolling.start();
                 }
             }
+
             else
             {
                 rolling.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

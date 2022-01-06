@@ -146,12 +146,12 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator CheckIfHeld(string button, float time)
     {
-        Debug.Log("Beginning Hold Check");
+        //Debug.Log("Beginning Hold Check");
         holdLock = true;
         yield return new WaitForSeconds(time);
         if (Input.GetButton(button))
         {
-            Debug.Log(button + " was held");
+         //   Debug.Log(button + " was held");
             grapple.Grapple(true);
         }
         holdLock = false;
@@ -210,20 +210,20 @@ public class PlayerScript : MonoBehaviour
 
         Gizmos.color = Color.blue;
 
-        if (right)
-        {
-            print("r" + right);
-        }
-
-        if (left)
-        {
-            print("l" + left);
-        }
-
-        if (down)
-        {
-            print("d" + down);
-        }
+        //if (right)
+        //{
+        //    print("r" + right);
+        //}
+        //
+        //if (left)
+        //{
+        //    print("l" + left);
+        //}
+        //
+        //if (down)
+        //{
+        //    print("d" + down);
+        //}
 
 
 

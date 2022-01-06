@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{12ba02f9-167c-462f-b986-5ac7649357f9}">
+		<property name="assetPath">
+			<value>LabTrack.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>122.83199999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50fb7822-e3ac-4007-9947-eb9677118f2e}</destination>
+		</relationship>
+	</object>
+</objects>
