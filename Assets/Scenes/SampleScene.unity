@@ -846,7 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f9462c9e9557b499a2c75127520ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootAngle: 45
   boostAngle: 70
   grappleBoost: 10
   shortDrain: 5
@@ -856,9 +855,6 @@ MonoBehaviour:
   dj: {fileID: 902747203}
   grappleHead: {fileID: 6218261059295613716, guid: 01f63ff77c8919a458edbcbdaf15840d, type: 3}
   mc: {fileID: 519420031}
-  grapplePointLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &902747201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1287,6 @@ MonoBehaviour:
   origin: {fileID: 1122722212}
   distanceBetween: 45
   tiles:
-  - {fileID: 4369507085585558118, guid: 93f36b278b41535409ee128f232d2e35, type: 3}
   - {fileID: 4369507085585558118, guid: f92ab4d1145f71944b6e1bbd2d857fea, type: 3}
   - {fileID: 4369507085585558118, guid: efaaba61e07098d4ca53e7619bc96459, type: 3}
   - {fileID: 4369507085585558118, guid: 5cd82afc9c2ec1a41b27e0ee4cd19a57, type: 3}
