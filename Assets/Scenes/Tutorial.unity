@@ -49108,9 +49108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190560ac8bff0e649a8911e932b9a1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioOptions: {fileID: 11400000, guid: 44626a5bc400b064592a06ebcdaccd9f, type: 2}
   labBGMEvent: event:/labBGM
+  mainMenuBGMEvent: 
+  currentBGMEvent: 
   globalBGMVol: 0.65
   globalSFXVol: 1
+  bgm_slider: {fileID: 0}
+  sfx_slider: {fileID: 0}
+  scene: Tutorial
 --- !u!1001 &1301709764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61942,6 +61948,7 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
+  skinOptions: {fileID: 0}
 --- !u!50 &1801957853
 Rigidbody2D:
   serializedVersion: 4
@@ -62636,6 +62643,7 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
+  skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
 --- !u!50 &1824155231
 Rigidbody2D:
   serializedVersion: 4
@@ -68731,7 +68739,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027785171}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2027785174
 Camera:
   m_ObjectHideFlags: 0
