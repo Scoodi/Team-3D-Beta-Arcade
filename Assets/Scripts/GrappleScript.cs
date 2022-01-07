@@ -19,8 +19,7 @@ public class GrappleScript : MonoBehaviour
     public GameObject grappleHead;
     public Camera mc;
 
-    [SerializeField]
-    private LayerMask grapplePointLayer;
+    private int grapplePointLayerValue = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,35 +42,38 @@ public class GrappleScript : MonoBehaviour
 
     public void Grapple(bool held, Rigidbody2D playerRb)
     {
-        Debug.Log("Grappling, held is: " + held.ToString());
         //Send at angle
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad)).normalized, Mathf.Infinity, grapplePointLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad)).normalized);
         if (hit.collider != null)
         {
-            Debug.Log("Hit with Grapple:" + hit.collider.gameObject.name);
             GameObject g = Instantiate(grappleHead, new Vector2(hit.point.x, hit.point.y), Quaternion.LookRotation(new Vector3(hit.normal.x,0,0),Vector3.up));
             g.transform.Rotate(new Vector3(0, 90, 0));
             StartCoroutine(KillOldGrapple(g));
-            if (!held)
+
+            if (hit.collider.gameObject.layer == grapplePointLayerValue)
             {
-                player.DrainBatteryByAmount(shortDrain);
-                playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
+                if (!held)
+                {
+                    player.DrainBatteryByAmount(shortDrain);
+                    playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    player.DrainBatteryByAmount(longDrain);
+                    playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
+                    lr.SetPosition(0, hit.point);
+                    lr.SetPosition(1, transform.position);
+                    dj.connectedAnchor = hit.point;
+                    dj.enabled = true;
+                    lr.enabled = true;
+                }
             }
-            else
-            {
-                player.DrainBatteryByAmount(longDrain);
-                playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
-                lr.SetPosition(0, hit.point);
-                lr.SetPosition(1, transform.position);
-                dj.connectedAnchor = hit.point;
-                dj.enabled = true;
-                lr.enabled = true;
-            }
-            
         }
         else
         {
-            Debug.Log("Hit nothing");
+            lr.SetPosition(0, transform.position + (new Vector3(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad), 0).normalized * 30));
+            lr.SetPosition(1, transform.position);
+            lr.enabled = true;
         }
     }
 

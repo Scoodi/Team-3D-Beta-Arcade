@@ -28,7 +28,6 @@ public class PlayerScript : MonoBehaviour
     public float startPoint;
     public float maxDistanceTravelled = 0;
 
-    private bool holdCheck = false;
     private bool holdLock = false;
 
     public bool inAir = true;
@@ -185,7 +184,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire1") && holdLock == false)
             {
-                StartCoroutine(CheckIfHeld("Fire1", 0.5f));
+                StartCoroutine(CheckIfHeld("Fire1", 0.2f));
             }
             if (Input.GetButtonUp("Fire1") && holdLock == true)
             {

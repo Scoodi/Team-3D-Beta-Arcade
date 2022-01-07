@@ -9837,63 +9837,6 @@ Transform:
   m_Father: {fileID: 412593532}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &405812225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 405812227}
-  - component: {fileID: 405812226}
-  m_Layer: 0
-  m_Name: LabTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &405812226
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405812225}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -11.616035, y: -1.5143824}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100.99852, y: 19.557264}
-  m_EdgeRadius: 0
---- !u!4 &405812227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405812225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.3, y: 0.89081, z: 0}
-  m_LocalScale: {x: 1, y: 0.38076, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407578315
 GameObject:
   m_ObjectHideFlags: 0
@@ -32187,7 +32130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660096127}
   - component: {fileID: 660096126}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33435,7 +33378,7 @@ RectTransform:
   - {fileID: 850941288}
   - {fileID: 1256994349}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -35626,7 +35569,7 @@ Transform:
   m_LocalScale: {x: 9.5, y: 1, z: 0.2185122}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &813892436
 GameObject:
@@ -42309,7 +42252,7 @@ GameObject:
   - component: {fileID: 1088709886}
   - component: {fileID: 1088709888}
   - component: {fileID: 1088709887}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LabEndPointCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61167,7 +61110,7 @@ Transform:
   m_LocalScale: {x: 0.89918, y: 1, z: 0.2185122}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -153.5}
 --- !u!4 &1783705441 stripped
 Transform:
@@ -61681,7 +61624,7 @@ GameObject:
   - component: {fileID: 1801957859}
   - component: {fileID: 1801957858}
   - component: {fileID: 1801957857}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -61963,9 +61906,6 @@ MonoBehaviour:
   dj: {fileID: 1801957857}
   grappleHead: {fileID: 6218261059295613716, guid: 01f63ff77c8919a458edbcbdaf15840d, type: 3}
   mc: {fileID: 2027785174}
-  grapplePointLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &1803569464
 GameObject:
   m_ObjectHideFlags: 0
@@ -71493,7 +71433,7 @@ GameObject:
   - component: {fileID: 2101303992}
   - component: {fileID: 2101303991}
   - component: {fileID: 2101303993}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerHUDOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
