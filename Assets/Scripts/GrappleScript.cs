@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class GrappleScript : MonoBehaviour
 {
-    //Angle to check for collision and apply force (grappleBoost)
-    public float shootAngle = 45;
+    //Angle to apply force (grappleBoost)
     public float boostAngle = 20;
     public float grappleBoost = 10f;
     //Amount to drain battery for short or long grapple
     public float shortDrain = 5f;
     public float longDrain = 10f;
-
 
     public PlayerScript player;
     public LineRenderer lr;
@@ -42,8 +40,13 @@ public class GrappleScript : MonoBehaviour
 
     public void Grapple(bool held, Rigidbody2D playerRb)
     {
-        //Send at angle
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad)).normalized);
+        //Send towards mouse position where clicked - adjust z value for perspective camera
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = -mc.transform.position.z;
+        mousePos = mc.ScreenToWorldPoint(mousePos);
+        Vector2 distanceToMouseClick = new Vector2((mousePos.x - transform.position.x), (mousePos.y - transform.position.y));
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, distanceToMouseClick.normalized);
         if (hit.collider != null)
         {
             GameObject g = Instantiate(grappleHead, new Vector2(hit.point.x, hit.point.y), Quaternion.LookRotation(new Vector3(hit.normal.x,0,0),Vector3.up));
@@ -55,12 +58,12 @@ public class GrappleScript : MonoBehaviour
                 if (!held)
                 {
                     player.DrainBatteryByAmount(shortDrain);
-                    playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
+                    playerRb.AddForce(distanceToMouseClick.normalized * grappleBoost, ForceMode2D.Impulse);
                 }
                 else
                 {
                     player.DrainBatteryByAmount(longDrain);
-                    playerRb.AddForce(new Vector2(Mathf.Cos(boostAngle * Mathf.Deg2Rad), Mathf.Sin(boostAngle * Mathf.Deg2Rad)).normalized * grappleBoost, ForceMode2D.Impulse);
+                    playerRb.AddForce(distanceToMouseClick.normalized * grappleBoost, ForceMode2D.Impulse);
                     lr.SetPosition(0, hit.point);
                     lr.SetPosition(1, transform.position);
                     dj.connectedAnchor = hit.point;
@@ -71,7 +74,7 @@ public class GrappleScript : MonoBehaviour
         }
         else
         {
-            lr.SetPosition(0, transform.position + (new Vector3(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad), 0).normalized * 30));
+            lr.SetPosition(0, transform.position + (new Vector3(distanceToMouseClick.x, distanceToMouseClick.y, 0).normalized * 30));
             lr.SetPosition(1, transform.position);
             lr.enabled = true;
         }
