@@ -18,6 +18,9 @@ public class GrappleScript : MonoBehaviour
     public DistanceJoint2D dj;
     public GameObject grappleHead;
     public Camera mc;
+
+    [SerializeField]
+    private LayerMask grapplePointLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +45,7 @@ public class GrappleScript : MonoBehaviour
     {
         Debug.Log("Grappling, held is: " + held.ToString());
         //Send at angle
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad)).normalized);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Cos(shootAngle * Mathf.Deg2Rad), Mathf.Sin(shootAngle * Mathf.Deg2Rad)).normalized, Mathf.Infinity, grapplePointLayer);
         if (hit.collider != null)
         {
             Debug.Log("Hit with Grapple:" + hit.collider.gameObject.name);

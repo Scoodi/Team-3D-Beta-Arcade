@@ -856,6 +856,9 @@ MonoBehaviour:
   dj: {fileID: 902747203}
   grappleHead: {fileID: 6218261059295613716, guid: 01f63ff77c8919a458edbcbdaf15840d, type: 3}
   mc: {fileID: 519420031}
+  grapplePointLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &902747201
 MonoBehaviour:
   m_ObjectHideFlags: 0
