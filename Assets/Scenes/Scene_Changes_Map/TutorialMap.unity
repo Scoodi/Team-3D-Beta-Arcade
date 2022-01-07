@@ -29956,7 +29956,7 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
-  skinOptions: {fileID: 0}
+  skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
 --- !u!4 &832304560
 Transform:
   m_ObjectHideFlags: 0
