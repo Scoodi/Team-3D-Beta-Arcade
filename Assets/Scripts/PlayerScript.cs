@@ -41,9 +41,9 @@ public class PlayerScript : MonoBehaviour
     private bool isTutorialCompleted = false;
 
     public Vector2 prev_velocity;
+
+    public SkinOptionsScriptableObject skinOptions;
     PlayerSounds sounds;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -87,6 +87,8 @@ public class PlayerScript : MonoBehaviour
         grapple = FindObjectOfType<GrappleScript>();
         startPoint = gameObject.transform.position.x;
         sounds = GetComponent<PlayerSounds>();
+
+        sr.sprite = skinOptions.skin;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

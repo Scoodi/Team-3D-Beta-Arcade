@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0dbe5f27-1bd7-479e-aebb-6e2c09e9444d}">
+		<property name="assetPath">
+			<value>[8-Bit] El -Retro  (Neal K)  Soft Retro music!.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>197.63999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50fb7822-e3ac-4007-9947-eb9677118f2e}</destination>
+		</relationship>
+	</object>
+</objects>
