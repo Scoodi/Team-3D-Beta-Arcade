@@ -9,6 +9,13 @@ public class ReducePlayerSpeed : MonoBehaviour
     [Range(1.0f, 99.0f)]
     public float MaxJumpPercentage;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        //Set layer to avoid collisions with grapple hook
+        gameObject.layer = 2;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
