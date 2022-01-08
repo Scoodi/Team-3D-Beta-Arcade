@@ -13,7 +13,7 @@ public class LeaderboardManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,6 @@ public class LeaderboardManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            LoadScores();
             SetLeaderboardDisplay();
             leaderboardContainer.SetActive(true);
         }
@@ -34,6 +33,7 @@ public class LeaderboardManager : MonoBehaviour
     public void SubmitScore (string entryName, float distanceReached)
     {
         entries.Add(new LeaderboardEntry { name = entryName, distance = distanceReached });
+        SaveScores();
     }
 
     void SortScores ()
@@ -43,6 +43,7 @@ public class LeaderboardManager : MonoBehaviour
 
     void SaveScores ()
     {
+        SortScores();
         XMLManager.instance.SaveScores(entries);
     }
 
@@ -50,8 +51,16 @@ public class LeaderboardManager : MonoBehaviour
     {
         entries = XMLManager.instance.LoadScores();
     }
-    void SetLeaderboardDisplay()
+
+    public float GetCurrentBest ()
     {
+        LoadScores();
+        SortScores();
+        return entries[0].distance;
+    }
+    public void SetLeaderboardDisplay()
+    {
+        LoadScores();
         for (int i = 0; i < leaderboardDisplay.Length; i++)
         {
             leaderboardDisplay[i].text = entries[i].name + " " + entries[i].distance;
