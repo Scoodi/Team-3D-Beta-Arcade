@@ -4,4 +4,5 @@ using UnityEngine;
 public class SkinOptionsScriptableObject : ScriptableObject
 {
     public Sprite skin;
+    public Sprite defaultSkin;
 }

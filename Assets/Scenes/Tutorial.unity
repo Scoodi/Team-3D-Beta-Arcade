@@ -61949,6 +61949,9 @@ MonoBehaviour:
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
   skinOptions: {fileID: 0}
+  lm:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &1801957853
 Rigidbody2D:
   serializedVersion: 4
@@ -62644,6 +62647,9 @@ MonoBehaviour:
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
   skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
+  lm:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!50 &1824155231
 Rigidbody2D:
   serializedVersion: 4

@@ -41,6 +41,7 @@ public class PlayerScript : MonoBehaviour
 
     public SkinOptionsScriptableObject skinOptions;
     PlayerSounds sounds;
+    public LayerMask lm;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class PlayerScript : MonoBehaviour
         startPoint = gameObject.transform.position.x;
         sounds = GetComponent<PlayerSounds>();
 
-        sr.sprite = skinOptions.skin;
+        sr.sprite = !skinOptions.skin ? skinOptions.defaultSkin : skinOptions.skin;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -150,7 +151,7 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(time);
         if (Input.GetButton(button))
         {
-         //   Debug.Log(button + " was held");
+            //   Debug.Log(button + " was held");
             grapple.Grapple(true);
         }
         holdLock = false;
@@ -173,7 +174,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                if (!inAir)
+                if (CheckCanJump())
                 {
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                     sounds.Jump();
@@ -198,35 +199,115 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(batteryDrainCoroutine);
     }
 
-    void OnDrawGizmos()
+    bool CheckCanJump()
     {
         var center = (Vector2)transform.position;
         var half = GetComponent<CircleCollider2D>().radius;
 
-        bool right = Physics2D.OverlapBox(center + Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
-        bool left = Physics2D.OverlapBox(center - Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
-        bool down = Physics2D.OverlapBox(center + Vector2.down * half, new Vector3(transform.localScale.x, 0.2f), 0);
+        bool ir = Physics2D.OverlapBox(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f), 0, lm);
+        bool il = Physics2D.OverlapBox(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f), 0, lm);
+        bool l, r, g;
 
-        Gizmos.color = Color.blue;
+        l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
 
-        //if (right)
-        //{
-        //    print("r" + right);
-        //}
-        //
-        //if (left)
-        //{
-        //    print("l" + left);
-        //}
-        //
-        //if (down)
-        //{
-        //    print("d" + down);
-        //}
+        r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
 
+        g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
+        g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
+        g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
 
+        if (inAir)
+        {
+            return false;
+        }
 
-
+        if (l || r)
+        {
+            if ((g && ir) || (g && il))
+            {
+                return false;
+            }
+            else if (!g)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            return true;
+        }
     }
 
+    void OnDrawGizmos()
+    {
+        var center = (Vector2)transform.position;
+        var half = GetComponent<CircleCollider2D>().radius;
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawWireCube(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+        Gizmos.DrawWireCube(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+
+        //l
+        Color c = Color.red;
+
+        bool l;
+        l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+
+        if (l)
+        {
+            c = Color.green;
+        }
+
+        Gizmos.color = c;
+
+        Gizmos.DrawRay(center - Vector2.right * .35f, Vector2.left * .5f);
+        Gizmos.DrawRay(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+        Gizmos.DrawRay(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+
+        //r
+        c = Color.red;
+        bool r;
+        r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+
+        if (r)
+        {
+            c = Color.green;
+        }
+
+        Gizmos.color = c;
+
+        Gizmos.DrawRay(center - Vector2.left * .35f, Vector2.right * .5f);
+        Gizmos.DrawRay(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+        Gizmos.DrawRay(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+
+        //ground
+        c = Color.red;
+        bool g;
+        g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
+        g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
+        g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
+
+        if (g)
+        {
+            c = Color.green;
+        }
+
+        Gizmos.color = c;
+
+        Gizmos.DrawRay(center, Vector2.down * half * 1.2f);
+        Gizmos.DrawRay(center + Vector2.right * .35f, (Vector2.down * half * 1.05f));
+        Gizmos.DrawRay(center - Vector2.right * .35f, (Vector2.down * half * 1.05f));
+    }
 }
