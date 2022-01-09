@@ -9,7 +9,7 @@ public class LoadMainGameScene : MonoBehaviour
     #region Load Main Game
     public void LoadMainGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("SampleScene");
     }
     #endregion
 
@@ -23,14 +23,14 @@ public class LoadMainGameScene : MonoBehaviour
     #region Load Main Menu
     public void MainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene("NewMainMenu");
     }
     #endregion
 
     #region Reset Game
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("TutorialMap");
     }
 
     #endregion

@@ -4034,7 +4034,7 @@ GameObject:
   - component: {fileID: 102920911}
   - component: {fileID: 102920913}
   - component: {fileID: 102920912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25714,6 +25714,9 @@ MonoBehaviour:
   deathDisplay: {fileID: 0}
   distanceAchievedDisplay: {fileID: 0}
   bestDistanceDisplay: {fileID: 0}
+  submitScoreUI: {fileID: 0}
+  nameInput: {fileID: 0}
+  leaderboardUI: {fileID: 0}
 --- !u!114 &721366213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25905,7 +25908,7 @@ GameObject:
   - component: {fileID: 724643149}
   - component: {fileID: 724643151}
   - component: {fileID: 724643150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63136,6 +63139,8 @@ GameObject:
   - component: {fileID: 1136517465}
   - component: {fileID: 1136517464}
   - component: {fileID: 1136517463}
+  - component: {fileID: 1136517470}
+  - component: {fileID: 1136517471}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -63173,8 +63178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f9462c9e9557b499a2c75127520ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootAngle: 45
+  boostAngle: 20
+  grappleBoost: 10
+  shortDrain: 5
+  longDrain: 10
+  player: {fileID: 1136517465}
+  lr: {fileID: 1136517470}
+  dj: {fileID: 1136517471}
   grappleHead: {fileID: 6218261059295613716, guid: 01f63ff77c8919a458edbcbdaf15840d, type: 3}
+  mc: {fileID: 476647274}
 --- !u!114 &1136517465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63314,6 +63326,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &1136517470
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136517462}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9aa44c10305e2b347bcf875e75feec23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.001952406
+        value: 0.09961744
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!232 &1136517471
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136517462}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 7.2107353
+  m_MaxDistanceOnly: 0
 --- !u!1 &1138087361
 GameObject:
   m_ObjectHideFlags: 0
@@ -73492,7 +73622,7 @@ GameObject:
   - component: {fileID: 1427256695}
   - component: {fileID: 1427256697}
   - component: {fileID: 1427256696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80400,7 +80530,7 @@ GameObject:
   - component: {fileID: 1622161655}
   - component: {fileID: 1622161657}
   - component: {fileID: 1622161656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84134,7 +84264,7 @@ GameObject:
   - component: {fileID: 1717582404}
   - component: {fileID: 1717582406}
   - component: {fileID: 1717582405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97402,7 +97532,7 @@ GameObject:
   - component: {fileID: 2064291789}
   - component: {fileID: 2064291791}
   - component: {fileID: 2064291790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lab_Light_GrapplingHook (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
