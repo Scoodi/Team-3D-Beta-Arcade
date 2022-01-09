@@ -143,7 +143,13 @@ public class PlayerScript : MonoBehaviour
         }
         yield return new WaitForSeconds(timeToDrain);
         batteryDrainCoroutine = BatteryDrain(timeToDrain);
-        StartCoroutine(batteryDrainCoroutine);
+        if (batteryRemaining > 0)
+        {
+            StartCoroutine(batteryDrainCoroutine);
+        } else
+        {
+            StartCoroutine(BeginDeath());
+        }
     }
 
     private IEnumerator CheckIfHeld(string button, float time)
@@ -166,7 +172,7 @@ public class PlayerScript : MonoBehaviour
         if (batteryRemaining <= 0)
         {
             headGem.color = Color.black;
-            ui.DeathUI(maxDistanceTravelled, 420f);
+            ui.DeathUI(maxDistanceTravelled);
         }
     }
 
@@ -212,7 +218,7 @@ public class PlayerScript : MonoBehaviour
 
         Gizmos.color = Color.blue;
 
-        if (right)
+        /*if (right)
         {
             print("r" + right);
         }
@@ -225,7 +231,7 @@ public class PlayerScript : MonoBehaviour
         if (down)
         {
             print("d" + down);
-        }
+        }*/
 
 
 

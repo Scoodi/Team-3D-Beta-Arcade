@@ -12,9 +12,16 @@ public class UIScript : MonoBehaviour
     public Text batteryDisplay;
     public Text distanceDisplay;
 
+    float distanceStorage;
+
     public GameObject deathDisplay;
     public Text distanceAchievedDisplay;
     public Text bestDistanceDisplay;
+
+    public GameObject submitScoreUI;
+    public InputField nameInput;
+
+    public GameObject leaderboardUI;
 
     // Start is called before the first frame update
     void Start()
@@ -41,10 +48,41 @@ public class UIScript : MonoBehaviour
         }
     }
 
-    public void DeathUI (float distanceAchieved, float bestDistance)
+    public void DeathUI (float distanceAchieved)
     {
         deathDisplay.SetActive(true);
-        distanceAchievedDisplay.text = distanceAchieved.ToString();
-        bestDistanceDisplay.text = bestDistance.ToString();
+        distanceStorage = distanceAchieved;
+        distanceAchievedDisplay.text = "You reached: " + distanceAchieved.ToString();
+        bestDistanceDisplay.text = "Your best: " + leaderboard.GetCurrentBest().ToString();
+    }
+
+    public void SubmitUI (string openOrSubmit)
+    {
+        if (openOrSubmit == "open")
+        {
+            submitScoreUI.SetActive(true);
+        } else
+        {
+            leaderboard.SubmitScore(nameInput.text, distanceStorage);
+            submitScoreUI.SetActive(false);
+            leaderboardUI.SetActive(true);
+            leaderboard.SetLeaderboardDisplay();
+        }
+    }
+
+    public void CloseLeaderboard()
+    {
+        leaderboardUI.SetActive(false);
+    }
+
+    public void MenuorRetry (string menuOrRetry)
+    {
+        if (menuOrRetry == "menu")
+        {
+            //load menu scene
+        } else if (menuOrRetry == "retry")
+        {
+            //reload this scene
+        }
     }
 }
