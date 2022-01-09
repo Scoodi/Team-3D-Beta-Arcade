@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
@@ -80,9 +81,11 @@ public class UIScript : MonoBehaviour
         if (menuOrRetry == "menu")
         {
             //load menu scene
+            SceneManager.LoadScene("MainMenu");
         } else if (menuOrRetry == "retry")
         {
             //reload this scene
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }
