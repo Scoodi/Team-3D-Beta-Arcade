@@ -1160,7 +1160,6 @@ MonoBehaviour:
   origin: {fileID: 1122722212}
   distanceBetween: 45
   tiles:
-  - {fileID: 4369507085585558118, guid: 93f36b278b41535409ee128f232d2e35, type: 3}
   - {fileID: 4369507085585558118, guid: 0b4f765c8e8ddc04a83eb613557a1e26, type: 3}
   - {fileID: 4369507085585558118, guid: a2d19503a6975d341915fce8cfbbda47, type: 3}
   - {fileID: 4369507085585558118, guid: 99ae7b92971c6b8409fd23b8d03c00b2, type: 3}
