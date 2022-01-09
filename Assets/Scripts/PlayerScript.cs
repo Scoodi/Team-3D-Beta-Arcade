@@ -28,7 +28,6 @@ public class PlayerScript : MonoBehaviour
     public float startPoint;
     public float maxDistanceTravelled = 0;
 
-    private bool holdCheck = false;
     private bool holdLock = false;
 
     public bool inAir = true;
@@ -119,9 +118,15 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void DrainBatteryByAmount(float amount)
+    {
+        batteryRemaining -= amount;
+    }
+
     private IEnumerator BatteryDrain(float timeToDrain)
     {
-        batteryRemaining -= 1f;
+        DrainBatteryByAmount(1f);
+
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
             headGem.color = Color.green;
@@ -141,7 +146,13 @@ public class PlayerScript : MonoBehaviour
         }
         yield return new WaitForSeconds(timeToDrain);
         batteryDrainCoroutine = BatteryDrain(timeToDrain);
-        StartCoroutine(batteryDrainCoroutine);
+        if (batteryRemaining > 0)
+        {
+            StartCoroutine(batteryDrainCoroutine);
+        } else
+        {
+            StartCoroutine(BeginDeath());
+        }
     }
 
     private IEnumerator CheckIfHeld(string button, float time)
@@ -152,7 +163,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButton(button))
         {
             //   Debug.Log(button + " was held");
-            grapple.Grapple(true);
+            grapple.Grapple(true, rb);
         }
         holdLock = false;
     }
@@ -164,7 +175,7 @@ public class PlayerScript : MonoBehaviour
         if (batteryRemaining <= 0)
         {
             headGem.color = Color.black;
-            ui.DeathUI(maxDistanceTravelled, 420f);
+            ui.DeathUI(maxDistanceTravelled);
         }
     }
 
@@ -182,11 +193,11 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire1") && holdLock == false)
             {
-                StartCoroutine(CheckIfHeld("Fire1", 0.5f));
+                StartCoroutine(CheckIfHeld("Fire1", 0.2f));
             }
             if (Input.GetButtonUp("Fire1") && holdLock == true)
             {
-                grapple.Grapple(false);
+                grapple.Grapple(false,rb);
             }
         }
     }

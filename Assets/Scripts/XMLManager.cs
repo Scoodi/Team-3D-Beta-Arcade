@@ -16,12 +16,14 @@ public class XMLManager : MonoBehaviour
         public List<LeaderboardEntry> list = new List<LeaderboardEntry>();
     }
 
-    void Awake()
+    void Start()
     {
         instance = this;
-
+        Debug.Log("XMLManager Started");
+        Debug.Log(Application.persistentDataPath.ToString());
         if (!Directory.Exists(Application.persistentDataPath + "/Leaderboard/"))
         {
+            Debug.Log("Creating dir");
             Directory.CreateDirectory(Application.persistentDataPath + "/Leaderboard/");
         }
     }
@@ -41,6 +43,7 @@ public class XMLManager : MonoBehaviour
             XmlSerializer serializer = new XmlSerializer(typeof(Leaderboard));
             FileStream stream = new FileStream(Application.persistentDataPath + "/Leaderboard/highscores.xml", FileMode.Open);
             leaderboard = serializer.Deserialize(stream) as Leaderboard;
+            stream.Close();
         }
 
         return leaderboard.list;
