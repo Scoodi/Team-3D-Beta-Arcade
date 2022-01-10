@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
     public float maxVelocityMagnitude;
 
     public float startPoint;
-    public float maxDistanceTravelled = 0;
+    public int maxDistanceTravelled = 0;
 
     private bool holdLock = false;
 
@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
         currentSpeed = rb.velocity.magnitude * 10;
         if (this.transform.position.x > maxDistanceTravelled)
         {
-            maxDistanceTravelled = gameObject.transform.position.x;
+            maxDistanceTravelled = Mathf.RoundToInt(gameObject.transform.position.x);
         }
 
         prev_velocity = rb.velocity;
