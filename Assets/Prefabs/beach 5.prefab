@@ -62994,7 +62994,7 @@ GameObject:
   - component: {fileID: 607844598082307579}
   - component: {fileID: 8600996545046274269}
   - component: {fileID: 3907254943962687155}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Floor
   m_TagString: Geometry
   m_Icon: {fileID: 0}
