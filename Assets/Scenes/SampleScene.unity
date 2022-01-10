@@ -1837,10 +1837,10 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
-  skinOptions: {fileID: 0}
+  skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
   lm:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!50 &902747196
 Rigidbody2D:
   serializedVersion: 4
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94eef17ba2ffb6841ac764bbb4734c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numToBuild: 1000
+  numToBuild: 100
   origin: {fileID: 1122722212}
   distanceBetween: 45
   tiles:

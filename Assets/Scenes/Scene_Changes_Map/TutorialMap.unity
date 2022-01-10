@@ -7560,9 +7560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6320caeccc9dc9a4aa5aaa6f538115da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1136517465}
   ui: {fileID: 1047574693}
-  playerHudCanvas: {fileID: 0}
+  playerHudCanvas: {fileID: 721366212}
 --- !u!61 &191813923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25693,7 +25693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &721366212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25706,7 +25706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e103f02499d7254a9712db5de442b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 832304559}
+  player: {fileID: 1136517465}
   leaderboard: {fileID: 0}
   spsDisplay: {fileID: 1130378034}
   batteryDisplay: {fileID: 83767320}
@@ -29969,6 +29969,7 @@ MonoBehaviour:
   airForce: 1
   jumpForce: 10
   currentSpeed: 0
+  maxVelocityMagnitude: 0
   startPoint: 0
   maxDistanceTravelled: 0
   inAir: 1
@@ -63180,8 +63181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostAngle: 20
   grappleBoost: 10
-  shortDrain: 5
-  longDrain: 10
+  shortDrain: 0
+  longDrain: 0
   player: {fileID: 1136517465}
   lr: {fileID: 1136517470}
   dj: {fileID: 1136517471}
@@ -63205,14 +63206,15 @@ MonoBehaviour:
   headGem: {fileID: 1968933187}
   grapple: {fileID: 1136517464}
   maxBatteryLevel: 100
-  batteryRemaining: 100
+  batteryRemaining: 1
   deathTimer: 3
-  batteryDrain: 1
+  batteryDrain: 0
   torqueForce: 2
   airTorqueForce: 0.3
   airForce: 1
   jumpForce: 10
   currentSpeed: 0
+  maxVelocityMagnitude: 10
   startPoint: 0
   maxDistanceTravelled: 0
   inAir: 1
@@ -89257,6 +89259,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1836779732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836779730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 229120383edcdc6498ece8e81ab4ebf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1136517465}
 --- !u!1 &1839204608
 GameObject:
   m_ObjectHideFlags: 0
