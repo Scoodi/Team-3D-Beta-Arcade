@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviour
@@ -14,16 +15,17 @@ public class PlayerScript : MonoBehaviour
     public GrappleScript grapple;
 
     public float maxBatteryLevel = 100f;
-    public float batteryRemaining = 100f;
+    public float batteryRemaining;
 
     public float deathTimer = 3f;
-    public float batteryDrain = 1f;
+    public float batteryDrain;
     public float torqueForce = 2f;
     public float airTorqueForce = 0.3f;
     public float airForce = 1f;
     public float jumpForce = 20f;
 
     public float currentSpeed;
+    public float maxVelocityMagnitude;
 
     public float startPoint;
     public float maxDistanceTravelled = 0;
@@ -35,6 +37,7 @@ public class PlayerScript : MonoBehaviour
     private IEnumerator batteryDrainCoroutine;
 
     public bool UIEnabled = true;
+    private bool isTutorialCompleted = false;
 
     public Vector2 prev_velocity;
 
@@ -63,6 +66,10 @@ public class PlayerScript : MonoBehaviour
 
     private void UpdateVars()
     {
+        if (rb.velocity.magnitude > maxVelocityMagnitude)
+        {
+            rb.velocity *= 0.999f;
+        }
         currentSpeed = rb.velocity.magnitude * 10;
         if (this.transform.position.x > maxDistanceTravelled)
         {
@@ -100,7 +107,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted) && rb.velocity.magnitude <= maxVelocityMagnitude)
         {
             if (!inAir)
             {
@@ -112,10 +119,6 @@ public class PlayerScript : MonoBehaviour
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
         }
-        else
-        {
-
-        }
     }
 
     public void DrainBatteryByAmount(float amount)
@@ -125,7 +128,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator BatteryDrain(float timeToDrain)
     {
-        DrainBatteryByAmount(1f);
+        DrainBatteryByAmount(timeToDrain);
 
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
@@ -181,7 +184,7 @@ public class PlayerScript : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted))
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -320,5 +323,18 @@ public class PlayerScript : MonoBehaviour
         Gizmos.DrawRay(center, Vector2.down * half * 1.2f);
         Gizmos.DrawRay(center + Vector2.right * .35f, (Vector2.down * half * 1.05f));
         Gizmos.DrawRay(center - Vector2.right * .35f, (Vector2.down * half * 1.05f));
+    }
+
+    public bool IsTutorialCompleted
+    {
+        get
+        {
+            return IsTutorialCompleted;
+        }
+
+        set
+        {
+            isTutorialCompleted = value;
+        }
     }
 }
