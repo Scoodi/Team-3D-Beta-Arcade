@@ -52,5 +52,9 @@ public class PauseMenuScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("TutorialMap");
+    }
 
 }

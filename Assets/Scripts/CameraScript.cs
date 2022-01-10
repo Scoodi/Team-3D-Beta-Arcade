@@ -18,9 +18,9 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "TutorialMap")
         {
-            this.transform.position = new Vector3(Mathf.Min(target.position.x + ((_width / 2f) - 8), 282f), transform.position.y, transform.position.z);
+            this.transform.position = new Vector3(Mathf.Max(Mathf.Min(target.position.x + ((_width / 2f) - 8), 320f),2f), transform.position.y, transform.position.z);
         } 
         else
         {

@@ -35,7 +35,6 @@ public class LoadMainGameScene : MonoBehaviour
 
     #endregion
 
-
     #region Quit Game
     public void QuitGame()
     {
