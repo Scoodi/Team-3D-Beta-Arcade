@@ -81,7 +81,7 @@ public class UIScript : MonoBehaviour
         if (menuOrRetry == "menu")
         {
             //load menu scene
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("NewMainMenu");
         } else if (menuOrRetry == "retry")
         {
             //reload this scene
