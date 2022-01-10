@@ -52,9 +52,14 @@ public class PauseMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void Restart()
+    public void RestartTutorial()
     {
         SceneManager.LoadScene("TutorialMap");
+    }
+
+    public void RestartMainGame()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 
 }
