@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviour
@@ -14,19 +15,20 @@ public class PlayerScript : MonoBehaviour
     public GrappleScript grapple;
 
     public float maxBatteryLevel = 100f;
-    public float batteryRemaining = 100f;
+    public float batteryRemaining;
 
     public float deathTimer = 3f;
-    public float batteryDrain = 1f;
+    public float batteryDrain;
     public float torqueForce = 2f;
     public float airTorqueForce = 0.3f;
     public float airForce = 1f;
     public float jumpForce = 20f;
 
     public float currentSpeed;
+    public float maxVelocityMagnitude;
 
     public float startPoint;
-    public float maxDistanceTravelled = 0;
+    public int maxDistanceTravelled = 0;
 
     private bool holdLock = false;
 
@@ -35,11 +37,18 @@ public class PlayerScript : MonoBehaviour
     private IEnumerator batteryDrainCoroutine;
 
     public bool UIEnabled = true;
+    private bool isTutorialCompleted = false;
 
     public Vector2 prev_velocity;
+    Vector2 contained_velocity;
+    float contained_av;
+
+    public string currentBiome = "beach";
+    public SkinOptionsScriptableObject skinOptions;
     PlayerSounds sounds;
-
-
+    public LayerMask lm;
+    bool canStomp = true;
+    bool stompin = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,24 +57,54 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(BatteryDrain(batteryDrain));
     }
 
+    float counter = 0;
+    float stompCooldown = 3;
+
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
+
+        if (counter >= stompCooldown)
+        {
+            canStomp = true;
+
+            counter = 0;
+        }
+        else
+        {
+            counter += Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && inAir && canStomp)
+        {
+            contained_velocity = rb.velocity;
+            contained_av = rb.angularVelocity;
+            rb.AddForce(Vector2.down * 20, ForceMode2D.Impulse);
+            rb.angularVelocity = 0;
+            stompin = true;
+            canStomp = false;
+        }
+
         UpdateVars();
 
         if (UIEnabled)
         {
             ui.UpdateUI();
         }
+
     }
 
     private void UpdateVars()
     {
+        if (rb.velocity.magnitude > maxVelocityMagnitude)
+        {
+            rb.velocity *= 0.999f;
+        }
         currentSpeed = rb.velocity.magnitude * 10;
         if (this.transform.position.x > maxDistanceTravelled)
         {
-            maxDistanceTravelled = gameObject.transform.position.x;
+            maxDistanceTravelled = Mathf.RoundToInt(gameObject.transform.position.x);
         }
 
         prev_velocity = rb.velocity;
@@ -79,11 +118,28 @@ public class PlayerScript : MonoBehaviour
         grapple = FindObjectOfType<GrappleScript>();
         startPoint = gameObject.transform.position.x;
         sounds = GetComponent<PlayerSounds>();
+
+        sr.sprite = !skinOptions.skin ? skinOptions.defaultSkin : skinOptions.skin;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         sounds.Landing();
+
+        if (stompin)
+        {
+            rb.velocity = Vector2.zero;
+
+            //Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + Vector2.Perpendicular(collision.contacts[0].normal) * 15, Color.red);
+
+            var vec = Vector2.Perpendicular(collision.contacts[0].normal);
+
+            rb.angularVelocity = contained_av * 1.05f;
+            rb.AddForce(vec * contained_velocity.magnitude * Mathf.Sign(contained_av), ForceMode2D.Impulse);
+
+            stompin = false;
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -97,7 +153,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted) && rb.velocity.magnitude <= maxVelocityMagnitude)
         {
             if (!inAir)
             {
@@ -109,9 +165,16 @@ public class PlayerScript : MonoBehaviour
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
         }
-        else
-        {
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print(collision.tag);
+
+        if (collision.tag != "Untagged")
+        {
+            currentBiome = collision.tag;
         }
     }
 
@@ -122,7 +185,7 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator BatteryDrain(float timeToDrain)
     {
-        DrainBatteryByAmount(1f);
+        DrainBatteryByAmount(timeToDrain);
 
         if (batteryRemaining >= (maxBatteryLevel * 0.66))
         {
@@ -146,7 +209,8 @@ public class PlayerScript : MonoBehaviour
         if (batteryRemaining > 0)
         {
             StartCoroutine(batteryDrainCoroutine);
-        } else
+        }
+        else
         {
             StartCoroutine(BeginDeath());
         }
@@ -154,12 +218,12 @@ public class PlayerScript : MonoBehaviour
 
     private IEnumerator CheckIfHeld(string button, float time)
     {
-        Debug.Log("Beginning Hold Check");
+        //Debug.Log("Beginning Hold Check");
         holdLock = true;
         yield return new WaitForSeconds(time);
         if (Input.GetButton(button))
         {
-            Debug.Log(button + " was held");
+            //   Debug.Log(button + " was held");
             grapple.Grapple(true, rb);
         }
         holdLock = false;
@@ -178,14 +242,25 @@ public class PlayerScript : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (batteryRemaining > 0)
+        if (batteryRemaining > 0 && (SceneManager.GetActiveScene().name != "Tutorial" || !isTutorialCompleted))
         {
             if (Input.GetButtonDown("Jump"))
             {
-                if (!inAir)
+                if (CheckCanJump())
                 {
-                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    sounds.Jump();
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        rb.AddForce(Vector2.up * jumpForce * 1.15f, ForceMode2D.Impulse);
+                        rb.velocity = new Vector2(rb.velocity.x * .7f, rb.velocity.y);
+                        sounds.Jump();
+
+                    }
+                    else
+                    {
+                        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        sounds.Jump();
+                    }
+
                 }
             }
             if (Input.GetButtonDown("Fire1") && holdLock == false)
@@ -194,7 +269,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetButtonUp("Fire1") && holdLock == true)
             {
-                grapple.Grapple(false,rb);
+                grapple.Grapple(false, rb);
             }
         }
     }
@@ -207,35 +282,131 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(batteryDrainCoroutine);
     }
 
-    void OnDrawGizmos()
+    bool CheckCanJump()
     {
         var center = (Vector2)transform.position;
         var half = GetComponent<CircleCollider2D>().radius;
 
-        bool right = Physics2D.OverlapBox(center + Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
-        bool left = Physics2D.OverlapBox(center - Vector2.right * half, new Vector2(0.2f, transform.localScale.y), 0);
-        bool down = Physics2D.OverlapBox(center + Vector2.down * half, new Vector3(transform.localScale.x, 0.2f), 0);
+        bool ir = Physics2D.OverlapBox(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f), 0, lm);
+        bool il = Physics2D.OverlapBox(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f), 0, lm);
+        bool l, r, g;
 
-        Gizmos.color = Color.blue;
+        l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
 
-        /*if (right)
+        r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+
+        g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
+        g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
+        g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
+
+        if (inAir)
         {
-            print("r" + right);
+            return false;
         }
 
-        if (left)
+        if (l || r)
         {
-            print("l" + left);
+            if (g)
+            {
+                if (il || ir)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
         }
-
-        if (down)
+        else
         {
-            print("d" + down);
-        }*/
-
-
-
-
+            return true;
+        }
     }
 
+    void OnDrawGizmos()
+    {
+        //var center = (Vector2)transform.position;
+        //var half = GetComponent<CircleCollider2D>().radius;
+        //Gizmos.color = Color.blue;
+
+        //Gizmos.DrawWireCube(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+        //Gizmos.DrawWireCube(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+
+        ////l
+        //Color c = Color.red;
+
+        //bool l;
+        //l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
+        //l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        //l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+
+        //if (l)
+        //{
+        //    c = Color.green;
+        //}
+
+        //Gizmos.color = c;
+
+        //Gizmos.DrawRay(center - Vector2.right * .35f, Vector2.left * .5f);
+        //Gizmos.DrawRay(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+        //Gizmos.DrawRay(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+
+        ////r
+        //c = Color.red;
+        //bool r;
+        //r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
+        //r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        //r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+
+        //if (r)
+        //{
+        //    c = Color.green;
+        //}
+
+        //Gizmos.color = c;
+
+        //Gizmos.DrawRay(center - Vector2.left * .35f, Vector2.right * .5f);
+        //Gizmos.DrawRay(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+        //Gizmos.DrawRay(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+
+        ////ground
+        //c = Color.red;
+        //bool g;
+        //g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
+        //g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
+        //g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
+
+        //if (g)
+        //{
+        //    c = Color.green;
+        //}
+
+        //Gizmos.color = c;
+
+        //Gizmos.DrawRay(center, Vector2.down * half * 1.2f);
+        //Gizmos.DrawRay(center + Vector2.right * .35f, (Vector2.down * half * 1.05f));
+        //Gizmos.DrawRay(center - Vector2.right * .35f, (Vector2.down * half * 1.05f));
+    }
+
+    public bool IsTutorialCompleted
+    {
+        get
+        {
+            return IsTutorialCompleted;
+        }
+
+        set
+        {
+            isTutorialCompleted = value;
+        }
+    }
 }

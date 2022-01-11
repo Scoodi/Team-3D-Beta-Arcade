@@ -45,7 +45,7 @@ public class UIScript : MonoBehaviour
             batteryDisplay.text = player.batteryRemaining.ToString() + "/" + player.maxBatteryLevel.ToString();
         } else
         {
-            batteryDisplay.text = "Dead";
+            batteryDisplay.text = "DEAD";
         }
     }
 
@@ -53,8 +53,8 @@ public class UIScript : MonoBehaviour
     {
         deathDisplay.SetActive(true);
         distanceStorage = distanceAchieved;
-        distanceAchievedDisplay.text = "You reached: " + distanceAchieved.ToString();
-        bestDistanceDisplay.text = "Your best: " + leaderboard.GetCurrentBest().ToString();
+        distanceAchievedDisplay.text = "YOU REACHED: " + distanceAchieved.ToString();
+        bestDistanceDisplay.text = "YOUR BEST: " + leaderboard.GetCurrentBest().ToString();
     }
 
     public void SubmitUI (string openOrSubmit)
@@ -81,7 +81,7 @@ public class UIScript : MonoBehaviour
         if (menuOrRetry == "menu")
         {
             //load menu scene
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("NewMainMenu");
         } else if (menuOrRetry == "retry")
         {
             //reload this scene

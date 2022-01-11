@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{178aca1a-1e51-4ad7-9b89-6cb511a29054}">
+		<property name="assetPath">
+			<value>BeachTrack1.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>148.19265306122449</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{50fb7822-e3ac-4007-9947-eb9677118f2e}</destination>
+		</relationship>
+	</object>
+</objects>
