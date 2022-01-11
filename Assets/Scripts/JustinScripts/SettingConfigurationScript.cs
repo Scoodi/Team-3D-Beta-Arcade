@@ -128,17 +128,9 @@ public class SettingConfigurationScript : MonoBehaviour {
 
     #region Display Mode
     
-    public void ToggleFullscreen(bool fullscreen)
+    public void SetFullscreen (bool isFullscreen)
     {
-        Screen.fullScreen = fullscreen;
-        if (Screen.fullScreen)
-        {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
+        Screen.fullScreen = isFullscreen;
     }
 
 

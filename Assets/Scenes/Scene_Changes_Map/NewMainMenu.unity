@@ -6250,8 +6250,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 378139930}
         m_TargetAssemblyTypeName: SettingConfigurationScript, Assembly-CSharp
-        m_MethodName: ToggleFullscreen
-        m_Mode: 6
+        m_MethodName: SetFullscreen
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7310,7 +7310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1186238444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9435,6 +9435,7 @@ MonoBehaviour:
   currentBGMEvent: 
   player: {fileID: 0}
   world: {fileID: 0}
+  checkingBiome: 0
   forestBG: {fileID: 0}
   beachBG: {fileID: 0}
   globalBGMVol: 0.65
