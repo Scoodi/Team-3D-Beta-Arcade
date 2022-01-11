@@ -133,7 +133,7 @@ public class SettingConfigurationScript : MonoBehaviour {
         Screen.fullScreen = fullscreen;
         if (Screen.fullScreen)
         {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         }
         else
         {

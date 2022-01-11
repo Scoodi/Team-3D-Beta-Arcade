@@ -834,7 +834,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 50468010}
         m_TargetAssemblyTypeName: PauseMenuScript, Assembly-CSharp
-        m_MethodName: RestartTutorial
+        m_MethodName: RestartMainGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4587,8 +4587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bdf17c3749d1e499e16d1f7b255e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingBatteryDistance: 400
-  DifficultyModifier: 1.5
+  StartingBatteryDistance: 350
+  DifficultyModifier: 1.45
   BatteryPrefab: {fileID: 6860784548114541335, guid: 03759681188d30a4a9270d6a0eb9e404, type: 3}
 --- !u!1 &1324926197
 GameObject:

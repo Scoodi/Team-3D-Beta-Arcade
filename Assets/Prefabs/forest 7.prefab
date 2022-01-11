@@ -13470,7 +13470,7 @@ GameObject:
   - component: {fileID: 3827739313908433544}
   m_Layer: 2
   m_Name: r
-  m_TagString: beach
+  m_TagString: forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
