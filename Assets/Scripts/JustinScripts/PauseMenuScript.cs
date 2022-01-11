@@ -55,11 +55,13 @@ public class PauseMenuScript : MonoBehaviour
     public void RestartTutorial()
     {
         SceneManager.LoadScene("TutorialMap");
+        Time.timeScale = 1f;
     }
 
     public void RestartMainGame()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1f;
     }
 
 }
