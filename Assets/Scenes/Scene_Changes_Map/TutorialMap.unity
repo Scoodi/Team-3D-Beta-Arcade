@@ -12098,8 +12098,9 @@ MonoBehaviour:
   labBGMEvent: event:/labBGM
   mainMenuBGMEvent: 
   currentBGMEvent: 
-  player: {fileID: 0}
+  player: {fileID: 1136517465}
   world: {fileID: 0}
+  checkingBiome: 0
   forestBG: {fileID: 0}
   beachBG: {fileID: 0}
   globalBGMVol: 0.65

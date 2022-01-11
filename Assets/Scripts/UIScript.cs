@@ -85,7 +85,7 @@ public class UIScript : MonoBehaviour
         } else if (menuOrRetry == "retry")
         {
             //reload this scene
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

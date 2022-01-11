@@ -23,6 +23,7 @@ public class SceneAudioManager : MonoBehaviour
     float damp = 0.64f;
 
     //e
+    public bool checkingBiome = false;
     public GameObject forestBG, beachBG; 
 
     [Range(0f, 1f)]
@@ -68,7 +69,6 @@ public class SceneAudioManager : MonoBehaviour
         }
         else if (scene.Contains("MainMenu"))
         {
-            //print("test");
             currentBGM = mainMenuBGM;
             currentBGMEvent = mainMenuBGMEvent;
         }
@@ -105,34 +105,36 @@ public class SceneAudioManager : MonoBehaviour
             }
         }
 
-        if (biome != player.currentBiome)
+        if (checkingBiome)
         {
-            biome = player.currentBiome;
-
-            FMOD.Studio.Bus bus;
-            bus = FMODUnity.RuntimeManager.GetBus("Bus:/");
-            bus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
-            switch (player.currentBiome)
+            if (biome != player.currentBiome)
             {
-                case "beach":
-                    currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[0].biomeBGMEvent);
-                    forestBG.SetActive(false);
-                    beachBG.SetActive(true);
+                biome = player.currentBiome;
 
-                    break;
-                case "forest":
-                    currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[1].biomeBGMEvent);
-                    forestBG.SetActive(true);
-                    beachBG.SetActive(false);
-                    break;
+                FMOD.Studio.Bus bus;
+                bus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+                bus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
-                default:
-                    break;
+                switch (biome)
+                {
+                    case "beach":
+                        currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[0].biomeBGMEvent);
+                        forestBG.SetActive(false);
+                        beachBG.SetActive(true);
+                        break;
+                    case "forest":
+                        currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[1].biomeBGMEvent);
+                        forestBG.SetActive(true);
+                        beachBG.SetActive(false);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                currentBGM.getVolume(out BGMvol);
+                currentBGM.start();
             }
-
-            currentBGM.getVolume(out BGMvol);
-            currentBGM.start();
         }
     }
 }

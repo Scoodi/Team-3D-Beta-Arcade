@@ -21,7 +21,6 @@ public class CostumeSelector : MonoBehaviour
             target = costumes.Count - 1;
         }
 
-        //target = (target > 0) ? target-- : costumes.Count - 1;
         currentCostume = costumes[target];
     }
 
@@ -33,7 +32,6 @@ public class CostumeSelector : MonoBehaviour
             target = 0;
         }
 
-        //target = (target < costumes.Count - 1) ? target++ : 0;
         currentCostume = costumes[target];
     }
 
@@ -44,7 +42,6 @@ public class CostumeSelector : MonoBehaviour
 
     void WriteFromOptions()
     {
-        // 0 - 1
         currentCostume = skinOptions.skin;
     }
 
