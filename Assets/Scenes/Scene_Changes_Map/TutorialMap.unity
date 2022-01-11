@@ -4389,7 +4389,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -12098,6 +12098,10 @@ MonoBehaviour:
   labBGMEvent: event:/labBGM
   mainMenuBGMEvent: 
   currentBGMEvent: 
+  player: {fileID: 0}
+  world: {fileID: 0}
+  forestBG: {fileID: 0}
+  beachBG: {fileID: 0}
   globalBGMVol: 0.65
   globalSFXVol: 1
   bgm_slider: {fileID: 0}
@@ -34043,7 +34047,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -35236,6 +35240,7 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
+  currentBiome: beach
   skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
   lm:
     serializedVersion: 2
@@ -70171,6 +70176,7 @@ MonoBehaviour:
   inAir: 1
   UIEnabled: 1
   prev_velocity: {x: 0, y: 0}
+  currentBiome: beach
   skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
   lm:
     serializedVersion: 2
@@ -77352,7 +77358,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -85353,7 +85359,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -86844,7 +86850,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -87743,7 +87749,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -93162,7 +93168,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106975,7 +106981,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -108230,7 +108236,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 0.72}
+  m_Size: {x: 0.26, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
