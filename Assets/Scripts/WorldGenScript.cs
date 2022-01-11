@@ -140,8 +140,6 @@ public class WorldGenScript : MonoBehaviour
         //print("b " + Vector2.right * game_biomes[0].startX + Vector2.right * (game_biomes[0].spawnedTiles.Count * distanceBetween));
         //print("dist " + (game_biomes[0].startX + game_biomes[0].spawnedTiles.Count * distanceBetween));
 
-        print($"current pos x {origin.position.x + currentPos.x} " +
-            $"player transform {player.transform.position.x}");
 
         if (origin.position.x + currentPos.x <= player.transform.position.x + distanceBetween * 1.55f)
         {
