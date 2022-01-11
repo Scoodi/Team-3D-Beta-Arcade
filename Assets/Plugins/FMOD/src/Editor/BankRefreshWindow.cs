@@ -131,6 +131,7 @@ namespace FMODUnity
 
             GUIStyle errorStyle = new GUIStyle(GUI.skin.box);
             errorStyle.alignment = TextAnchor.UpperLeft;
+                ;
             errorStyle.wordWrap = true;
             errorStyle.normal.textColor = Color.red;
 
