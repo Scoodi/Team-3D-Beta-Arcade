@@ -67189,7 +67189,7 @@ GameObject:
   - component: {fileID: 1705364466231018218}
   - component: {fileID: 7043312978281821293}
   - component: {fileID: 8238557788085821786}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
