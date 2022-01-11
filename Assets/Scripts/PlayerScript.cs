@@ -130,7 +130,7 @@ public class PlayerScript : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
 
-            Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + Vector2.Perpendicular(collision.contacts[0].normal) * 15, Color.red);
+            //Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + Vector2.Perpendicular(collision.contacts[0].normal) * 15, Color.red);
 
             var vec = Vector2.Perpendicular(collision.contacts[0].normal);
 
@@ -170,6 +170,8 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.tag);
+
         if (collision.tag != "Untagged")
         {
             currentBiome = collision.tag;

@@ -33436,7 +33436,7 @@ GameObject:
   - component: {fileID: 4754316034117474298}
   - component: {fileID: 9156408796018101813}
   - component: {fileID: 2075215359636163323}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: r
   m_TagString: forest
   m_Icon: {fileID: 0}
