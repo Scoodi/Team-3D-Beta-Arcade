@@ -9,7 +9,7 @@ public class EnableUIOnCollision : MonoBehaviour
     public UIScript playerHudCanvas;
 
     // Start is called before the first frame update
-    protected void Start()
+    void Start()
     {
         SetUIActive(false);
     }
