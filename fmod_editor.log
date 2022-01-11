@@ -9,7 +9,7 @@
 [LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001B68F6ADE08 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001B68F6A6CF8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,255 +20,19 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8AD48 : node = 000001B4F49465E0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8AD48
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4F49466F0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8AD48
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC87AA8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B67ED0E628)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC88D38)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC884C8 : node = 000001B4EE3B9380
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC884C8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE3B9490
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BeachTrack1', format=5, channels=2, frequency=48000, lengthbytes=2012960, lengthpcm=7113247, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC884C8
-[LOG] SoundI::release                          : ForestTrack (000001B68FC8AD48)
-[LOG] SoundI::release                          :     ForestTrack (000001B4E8AF2F48)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC8B768)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8A178 : node = 000001B4E71800E0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8A178
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4E71801F0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8A178
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC884C8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B7055FF5A8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC88D38)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8B258 : node = 000001B4EE3BA780
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8B258
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE3BA890
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BeachTrack1', format=5, channels=2, frequency=48000, lengthbytes=2012960, lengthpcm=7113247, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8B258
-[LOG] SoundI::release                          : ForestTrack (000001B68FC8A178)
-[LOG] SoundI::release                          :     ForestTrack (000001B68F863868)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC89098)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8A328 : node = 000001B4EE8198D0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8A328
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE8199E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8A328
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC8B258)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B4EA2DE8F8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC89E18)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC89E18 : node = 000001B4EE819650
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC89E18
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE819760
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BeachTrack1', format=5, channels=2, frequency=48000, lengthbytes=2012960, lengthpcm=7113247, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC89E18
-[LOG] SoundI::release                          : ForestTrack (000001B68FC8A328)
-[LOG] SoundI::release                          :     ForestTrack (000001B705600108)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC853D8)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC87AA8 : node = 000001B4EE3BBCC0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC87AA8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE3BBDD0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC87AA8
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC89E18)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B67ED0EE48)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC86668)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8AEF8 : node = 000001B4EE7DB920
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8AEF8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE7DBA30
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BeachTrack1', format=5, channels=2, frequency=48000, lengthbytes=2012960, lengthpcm=7113247, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8AEF8
-[LOG] SoundI::release                          : ForestTrack (000001B68FC87AA8)
-[LOG] SoundI::release                          :     ForestTrack (000001B67ED0E2E8)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC8B258)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC853D8 : node = 000001B4E717DCA0
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC853D8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4E717DDB0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC853D8
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC8AEF8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B4E8AF5308)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC89758)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC87AA8 : node = 000001B4EE3B8480
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC87AA8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4EE3B8590
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BeachTrack1', format=5, channels=2, frequency=48000, lengthbytes=2012960, lengthpcm=7113247, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC87AA8
-[LOG] SoundI::release                          : ForestTrack (000001B68FC853D8)
-[LOG] SoundI::release                          :     ForestTrack (000001B4E8AF5988)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC85738)
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC87FB8 : node = 000001B4F4212670
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC87FB8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4F4212780
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='ForestTrack', format=5, channels=2, frequency=48000, lengthbytes=903488, lengthpcm=2884608, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC87FB8
-[LOG] SoundI::release                          : BeachTrack1 (000001B68FC87AA8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B4E8AF35C8)
-[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC88D38)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC864B8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC864B8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC864B8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC864B8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC864B8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC864B8
-[LOG] SystemI::createSound                     : filename = Assets/FMOD Project/playersounds/Build/Desktop/Master.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000001B68FC8B258 : node = 000001B4E717F460
-[LOG] SystemI::createSound                     : add node to async list : head = 000001B708E5E458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC8B258
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FMOD Project/playersounds/Build/Desktop/Master.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6309088
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13440
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001B4E717F570
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='MenuTrack', format=5, channels=2, frequency=48000, lengthbytes=1519488, lengthpcm=5241600, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC8B258
-[LOG] SoundI::release                          : ForestTrack (000001B68FC87FB8)
-[LOG] SoundI::release                          :     ForestTrack (000001B700676AD8)
-[LOG] SoundI::release                          :     ForestTrack (000001B68FC864B8)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001B68FC87AA8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001B68FC87AA8
-[LOG] SoundI::release                          : MenuTrack (000001B68FC8B258)
-[LOG] SoundI::release                          :     MenuTrack (000001B7055FFF68)
-[LOG] SoundI::release                          :     MenuTrack (000001B68FC87AA8)
-[LOG] SoundI::release                          :  (000001B4E6F4D6B8)
-[LOG] SoundI::release                          :     in_air_rolling (000001B708E0E7C8)
-[LOG] SoundI::release                          :  (000001B4E6F4B888)
-[LOG] SoundI::release                          :     262893__kwahmah-02__videogame-jump (000001B708E0E2E8)
-[LOG] SoundI::release                          :  (000001B4E6F4C6E8)
-[LOG] SoundI::release                          :     rolling (000001B708E0E148)
-[LOG] SoundI::release                          :  (000001B4E6F4CF88)
-[LOG] SoundI::release                          :     341701__projectsu012__shmup-player-explosion (000001B708E10028)
-[LOG] SoundI::release                          :  (000001B4E6F481E8)
-[LOG] SoundI::release                          :     landing (000001B708E0E968)
+[LOG] SoundI::release                          : BeachTrack1 (000001B68FC878F8)
+[LOG] SoundI::release                          :     BeachTrack1 (000001B4EA2DE0D8)
+[LOG] SoundI::release                          :     BeachTrack1 (000001B68FC87088)
+[LOG] SoundI::release                          :  (000001B4EA257F68)
+[LOG] SoundI::release                          :     in_air_rolling (000001B68D56CFE8)
+[LOG] SoundI::release                          :  (000001B4EA25B048)
+[LOG] SoundI::release                          :     262893__kwahmah-02__videogame-jump (000001B68D56BFA8)
+[LOG] SoundI::release                          :  (000001B4EA2583B8)
+[LOG] SoundI::release                          :     rolling (000001B68D56D188)
+[LOG] SoundI::release                          :  (000001B4EA25B1B8)
+[LOG] SoundI::release                          :     341701__projectsu012__shmup-player-explosion (000001B68D56C7C8)
+[LOG] SoundI::release                          :  (000001B4EA257DF8)
+[LOG] SoundI::release                          :     landing (000001B68D56CE48)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -279,3 +43,7 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
