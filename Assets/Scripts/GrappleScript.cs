@@ -40,11 +40,7 @@ public class GrappleScript : MonoBehaviour
 
     public void Grapple(bool held, Rigidbody2D playerRb)
     {
-        //Send towards mouse position where clicked - adjust z value for perspective camera
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = -mc.transform.position.z;
-        mousePos = mc.ScreenToWorldPoint(mousePos);
-        Vector2 distanceToMouseClick = new Vector2((mousePos.x - transform.position.x), (mousePos.y - transform.position.y));
+        Vector2 distanceToMouseClick = CalculateDistanceToMouseClick();
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, distanceToMouseClick.normalized);
         if (hit.collider != null)
@@ -95,5 +91,14 @@ public class GrappleScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
+    }
+
+    private Vector2 CalculateDistanceToMouseClick()
+    {
+        //Send player towards mouse position where clicked - adjust z value for perspective camera
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = -mc.transform.position.z;
+        mousePos = mc.ScreenToWorldPoint(mousePos);
+        return new Vector2((mousePos.x - transform.position.x), (mousePos.y - transform.position.y));
     }
 }
