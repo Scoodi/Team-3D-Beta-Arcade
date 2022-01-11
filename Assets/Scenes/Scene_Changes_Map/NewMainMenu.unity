@@ -7390,6 +7390,8 @@ MonoBehaviour:
   labBGMEvent: event:/labBGM
   mainMenuBGMEvent: event:/mainMenuBGM
   currentBGMEvent: 
+  player: {fileID: 0}
+  world: {fileID: 0}
   globalBGMVol: 0.65
   globalSFXVol: 1
   bgm_slider: {fileID: 2067829577}
@@ -9300,10 +9302,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   costumes:
   - {fileID: 21300000, guid: dab342891ec121844b6f057ecfa324b1, type: 3}
-  - {fileID: 21300000, guid: 30093c2d6f048144caa03240ba783072, type: 3}
-  - {fileID: 21300000, guid: dbfcf6df264545340ad51ce853c74c57, type: 3}
-  - {fileID: 21300000, guid: d44569de0c59d304eb73110badacd1aa, type: 3}
-  - {fileID: 21300000, guid: db0e5cc4dd3d8554d8e42b2a2891e127, type: 3}
+  - {fileID: 21300000, guid: d7a0e10014c42c74d9768b0dda5545cc, type: 3}
+  - {fileID: 21300000, guid: 95d3bb78f20e1824a959c2c18004a129, type: 3}
+  - {fileID: 21300000, guid: c5b45978760bb11458d25bb1971079b8, type: 3}
+  - {fileID: 21300000, guid: b518d66564513424095cbbc50a004290, type: 3}
+  - {fileID: 21300000, guid: fee26767ecd73e04786f55908924c0b9, type: 3}
+  - {fileID: 21300000, guid: 970610f3b9f479340bc1fdb589480948, type: 3}
+  - {fileID: 21300000, guid: b0ea1e2527bcc6342b6790d95eb531d8, type: 3}
   skinOptions: {fileID: 11400000, guid: 2c1a5fc7ee7597742ac897e9cf7b7c83, type: 2}
   costume: {fileID: 1540368732}
   currentCostume: {fileID: 0}

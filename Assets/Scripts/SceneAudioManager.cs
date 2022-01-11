@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class SceneAudioManager : MonoBehaviour
 {
-    //function to writee to sliders the first time
-    //link to biome changing 
-
     public AudioOptionsScriptableObject audioOptions;
 
     public FMOD.Studio.EventInstance labBGM;
@@ -19,7 +16,14 @@ public class SceneAudioManager : MonoBehaviour
     public FMOD.Studio.EventInstance currentBGM;
     public string currentBGMEvent;
 
+    public PlayerScript player;
+    public WorldGenScript world;
+    string biome;
+
     float damp = 0.64f;
+
+    //e
+    public GameObject forestBG, beachBG; 
 
     [Range(0f, 1f)]
     [SerializeField]
@@ -99,6 +103,36 @@ public class SceneAudioManager : MonoBehaviour
             {
                 ApplyChanges();
             }
+        }
+
+        if (biome != player.currentBiome)
+        {
+            biome = player.currentBiome;
+
+            FMOD.Studio.Bus bus;
+            bus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+            bus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+            switch (player.currentBiome)
+            {
+                case "beach":
+                    currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[0].biomeBGMEvent);
+                    forestBG.SetActive(false);
+                    beachBG.SetActive(true);
+
+                    break;
+                case "forest":
+                    currentBGM = FMODUnity.RuntimeManager.CreateInstance(world.biomes[1].biomeBGMEvent);
+                    forestBG.SetActive(true);
+                    beachBG.SetActive(false);
+                    break;
+
+                default:
+                    break;
+            }
+
+            currentBGM.getVolume(out BGMvol);
+            currentBGM.start();
         }
     }
 }

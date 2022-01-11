@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23331388d20510a49993a3c9ce7f9436, type: 3}
   m_Name: AudioOptions
   m_EditorClassIdentifier: 
-  background_vol: 0.14053994
-  sfx_vol: 0.17
+  background_vol: 0.5
+  sfx_vol: 1

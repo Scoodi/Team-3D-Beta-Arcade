@@ -40,10 +40,15 @@ public class PlayerScript : MonoBehaviour
     private bool isTutorialCompleted = false;
 
     public Vector2 prev_velocity;
+    Vector2 contained_velocity;
+    float contained_av;
 
+    public string currentBiome = "beach";
     public SkinOptionsScriptableObject skinOptions;
     PlayerSounds sounds;
     public LayerMask lm;
+    bool canStomp = true;
+    bool stompin = false;
 
     // Start is called before the first frame update
     void Start()
@@ -52,16 +57,42 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(BatteryDrain(batteryDrain));
     }
 
+    float counter = 0;
+    float stompCooldown = 3;
+
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
+
+        if (counter >= stompCooldown)
+        {
+            canStomp = true;
+
+            counter = 0;
+        }
+        else
+        {
+            counter += Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && inAir && canStomp)
+        {
+            contained_velocity = rb.velocity;
+            contained_av = rb.angularVelocity;
+            rb.AddForce(Vector2.down * 20, ForceMode2D.Impulse);
+            rb.angularVelocity = 0;
+            stompin = true;
+            canStomp = false;
+        }
+
         UpdateVars();
 
         if (UIEnabled)
         {
             ui.UpdateUI();
         }
+
     }
 
     private void UpdateVars()
@@ -94,6 +125,21 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         sounds.Landing();
+
+        if (stompin)
+        {
+            rb.velocity = Vector2.zero;
+
+            Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + Vector2.Perpendicular(collision.contacts[0].normal) * 15, Color.red);
+
+            var vec = Vector2.Perpendicular(collision.contacts[0].normal);
+
+            rb.angularVelocity = contained_av * 1.05f;
+            rb.AddForce(vec * contained_velocity.magnitude * Mathf.Sign(contained_av), ForceMode2D.Impulse);
+
+            stompin = false;
+        }
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -118,6 +164,15 @@ public class PlayerScript : MonoBehaviour
                 rb.AddTorque(-Input.GetAxis("Horizontal") * airTorqueForce);
                 rb.AddForce(Vector2.right * Input.GetAxis("Horizontal"));
             }
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Untagged")
+        {
+            currentBiome = collision.tag;
         }
     }
 
@@ -152,7 +207,8 @@ public class PlayerScript : MonoBehaviour
         if (batteryRemaining > 0)
         {
             StartCoroutine(batteryDrainCoroutine);
-        } else
+        }
+        else
         {
             StartCoroutine(BeginDeath());
         }
@@ -190,8 +246,19 @@ public class PlayerScript : MonoBehaviour
             {
                 if (CheckCanJump())
                 {
-                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    sounds.Jump();
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        rb.AddForce(Vector2.up * jumpForce * 1.15f, ForceMode2D.Impulse);
+                        rb.velocity = new Vector2(rb.velocity.x * .7f, rb.velocity.y);
+                        sounds.Jump();
+
+                    }
+                    else
+                    {
+                        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                        sounds.Jump();
+                    }
+
                 }
             }
             if (Input.GetButtonDown("Fire1") && holdLock == false)
@@ -200,7 +267,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetButtonUp("Fire1") && holdLock == true)
             {
-                grapple.Grapple(false,rb);
+                grapple.Grapple(false, rb);
             }
         }
     }
@@ -241,13 +308,16 @@ public class PlayerScript : MonoBehaviour
 
         if (l || r)
         {
-            if ((g && ir) || (g && il))
+            if (g)
             {
-                return false;
-            }
-            else if (!g)
-            {
-                return false;
+                if (il || ir)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
