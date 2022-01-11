@@ -148,7 +148,7 @@ public class WorldGenScript : MonoBehaviour
             SpawnTiles(ref game_biomes, ref toSpawn);
         }
 
-        Debug.DrawLine(new Vector3(lastBiomeEndx, 0, 0), new Vector3(lastBiomeEndx, 10, 0), Color.red);
+        //Debug.DrawLine(new Vector3(lastBiomeEndx, 0, 0), new Vector3(lastBiomeEndx, 10, 0), Color.red);
 
         //check_to_del_biomes();
     }
