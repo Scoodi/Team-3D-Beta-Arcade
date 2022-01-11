@@ -168,10 +168,8 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        //print(collision.tag);
-
         if (collision.tag != "Untagged" && currentBiome != collision.tag)
         {
             currentBiome = collision.tag;
@@ -334,67 +332,67 @@ public class PlayerScript : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        var center = (Vector2)transform.position;
-        var half = GetComponent<CircleCollider2D>().radius;
-        Gizmos.color = Color.blue;
+        //var center = (Vector2)transform.position;
+        //var half = GetComponent<CircleCollider2D>().radius;
+        //Gizmos.color = Color.blue;
 
-        Gizmos.DrawWireCube(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
-        Gizmos.DrawWireCube(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+        //Gizmos.DrawWireCube(center - Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
+        //Gizmos.DrawWireCube(center + Vector2.right * .3f, new Vector2(0.1f, transform.localScale.y * .5f));
 
-        //l
-        Color c = Color.red;
+        ////l
+        //Color c = Color.red;
 
-        bool l;
-        l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
-        l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
-        l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        //bool l;
+        //l = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.left, .5f);
+        //l = Physics2D.Raycast(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
+        //l = Physics2D.Raycast(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left, .5f);
 
-        if (l)
-        {
-            c = Color.green;
-        }
+        //if (l)
+        //{
+        //    c = Color.green;
+        //}
 
-        Gizmos.color = c;
+        //Gizmos.color = c;
 
-        Gizmos.DrawRay(center - Vector2.right * .35f, Vector2.left * .5f);
-        Gizmos.DrawRay(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
-        Gizmos.DrawRay(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+        //Gizmos.DrawRay(center - Vector2.right * .35f, Vector2.left * .5f);
+        //Gizmos.DrawRay(center - Vector2.right * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
+        //Gizmos.DrawRay(center - Vector2.right * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.left * .5f);
 
-        //r
-        c = Color.red;
-        bool r;
-        r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
-        r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
-        r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        ////r
+        //c = Color.red;
+        //bool r;
+        //r = Physics2D.Raycast(center - Vector2.left * .35f, Vector2.right, .5f);
+        //r = Physics2D.Raycast(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
+        //r = Physics2D.Raycast(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right, .5f);
 
-        if (r)
-        {
-            c = Color.green;
-        }
+        //if (r)
+        //{
+        //    c = Color.green;
+        //}
 
-        Gizmos.color = c;
+        //Gizmos.color = c;
 
-        Gizmos.DrawRay(center - Vector2.left * .35f, Vector2.right * .5f);
-        Gizmos.DrawRay(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
-        Gizmos.DrawRay(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+        //Gizmos.DrawRay(center - Vector2.left * .35f, Vector2.right * .5f);
+        //Gizmos.DrawRay(center - Vector2.left * .35f + Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
+        //Gizmos.DrawRay(center - Vector2.left * .35f - Vector2.down * transform.localScale.y * .5f * .5f, Vector2.right * .5f);
 
-        //ground
-        c = Color.red;
-        bool g;
-        g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
-        g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
-        g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
+        ////ground
+        //c = Color.red;
+        //bool g;
+        //g = Physics2D.Raycast(center, Vector2.down, 1.2f * half);
+        //g = Physics2D.Raycast(center + Vector2.right * .35f, Vector2.down, half * 1.05f);
+        //g = Physics2D.Raycast(center - Vector2.right * .35f, Vector2.down, half * 1.05f);
 
-        if (g)
-        {
-            c = Color.green;
-        }
+        //if (g)
+        //{
+        //    c = Color.green;
+        //}
 
-        Gizmos.color = c;
+        //Gizmos.color = c;
 
-        Gizmos.DrawRay(center, Vector2.down * half * 1.2f);
-        Gizmos.DrawRay(center + Vector2.right * .35f, (Vector2.down * half * 1.05f));
-        Gizmos.DrawRay(center - Vector2.right * .35f, (Vector2.down * half * 1.05f));
+        //Gizmos.DrawRay(center, Vector2.down * half * 1.2f);
+        //Gizmos.DrawRay(center + Vector2.right * .35f, (Vector2.down * half * 1.05f));
+        //Gizmos.DrawRay(center - Vector2.right * .35f, (Vector2.down * half * 1.05f));
     }
 
     public bool IsTutorialCompleted

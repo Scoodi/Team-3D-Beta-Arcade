@@ -81,11 +81,11 @@ public class UIScript : MonoBehaviour
         if (menuOrRetry == "menu")
         {
             //load menu scene
-            SceneManager.LoadScene("NewMainMenu");
+            SceneManager.LoadScene(0);
         } else if (menuOrRetry == "retry")
         {
             //reload this scene
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene(2);
         }
     }
 }

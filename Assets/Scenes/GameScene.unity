@@ -302,7 +302,7 @@ MonoBehaviour:
   currentBGMEvent: 
   player: {fileID: 87789194}
   world: {fileID: 1299551384}
-  checkingBiome: 0
+  checkingBiome: 1
   forestBG: {fileID: 1275311723}
   beachBG: {fileID: 402838752}
   globalBGMVol: 0.65
